@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html body {
+  margin: 0;
+}
+
+html body a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+nav {
+  background-color: #5CDB95;
+  color: #05386B;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+nav .brand {
+  margin-right: auto;
+  padding: 10px 0;
+}
+
+nav .brand:hover {
+  color: #EDF5E1;
+}
+
+nav .brand:hover .block-brand {
+  background-color: #EDF5E1;
+}
+
+nav .brand .block-brand {
+  background-color: #05386B;
+  padding: 10px;
+  color: #5CDB95;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0px 10px;
+}
+
+nav ul li:hover {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #EDF5E1;
+  color: #EDF5E1;
+}
+
+#hero-page {
+  height: 78vh;
+  background-color: #EDF5E1;
+  color: #05386B;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#hero-page .inner-hero {
+  margin: 0 auto;
+  width: 70%;
+}
+
+#hero-page .inner-hero h1 {
+  margin: 0;
+  font-size: 72px;
+}
+
+#hero-page .inner-hero h2 {
+  margin: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+}
+
+#hero-page .inner-hero .line-break {
+  height: 3px;
+  width: 100%;
+  background-color: #5CDB95;
+  margin: 40px 0;
+}
+
+#hero-page .inner-hero .hero-button {
+  background-color: #5CDB95;
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 35px;
+}
+
+#hero-page .inner-hero .hero-button:hover {
+  color: #EDF5E1;
+  background-color: #379683;
+}
+
+#projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#projects article {
+  padding: 4em 4em 2em 4em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: default;
+  height: 450px;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease, -webkit-filter 1s ease;
+}
+
+#projects article:nth-child(4n - 1), #projects article:nth-child(4n - 2) {
+  width: 60%;
+}
+
+#projects article:nth-child(6n - 5):before {
+  background-color: #8d82c4;
+}
+
+#projects article:nth-child(6n - 4):before {
+  background-color: #6fc3df;
+}
+
+#projects article:nth-child(6n - 3):before {
+  background-color: #CCB154;
+}
+
+#projects article:nth-child(6n - 2):before {
+  background-color: #539151;
+}
+
+#projects article::before {
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+#projects article::after {
+  background-color: rgba(36, 41, 67, 0.25);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#projects article:hover::before {
+  opacity: 0;
+}
+
+#projects article header {
+  position: relative;
+  z-index: 3;
+  color: #05386B;
+}

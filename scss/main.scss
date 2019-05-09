@@ -1,0 +1,225 @@
+// Libs.
+    @import 'libs/variables';
+    @import 'libs/mixins';
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700');
+
+// Base.  
+
+	@import 'base/page';
+	@import 'base/typography';
+
+// Component. 
+
+    @import 'components/button';
+    @import 'components/form'; 
+    @import 'components/icons';
+    @import 'components/images';
+
+// Layout.
+
+    @import 'layouts/footer';
+    @import 'layouts/menu';
+
+// All In This File For Now
+
+// Set box model to border-box.
+html {
+    box-sizing: border-box;
+
+    // Base page margin removed
+    body {
+        margin: 0;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+// Sets global font
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+// Navigation styles
+nav {
+    background-color: $set1color3;
+    color: $set1color1;
+    padding: 20px;;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 26px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    //border-bottom: 2px solid black;
+
+    // Left side brand logo 
+    .brand {
+        margin-right: auto;
+        padding: 10px 0;
+
+        &:hover {
+            color: $set1color4;
+
+            .block-brand {
+                background-color: $set1color4;
+            }
+        }
+
+        // Blocky Lettering
+        .block-brand {
+            background-color: $set1color1;
+            padding: 10px;
+            color: $set1color3;
+        }
+    }
+
+    // Menu list
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline;
+            margin: 0px 10px;
+
+            &:hover {
+                padding-bottom: 2px;
+                border-bottom: 2px solid $set1color4;
+                color: $set1color4;
+            }
+        }
+    }
+}
+
+#hero-page {
+    height: 78vh;
+    background-color: $set1color4;
+    color: $set1color1;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .inner-hero {
+        margin: 0 auto;
+        width: 70%;
+
+        h1 {
+            margin: 0;
+            font-size: 72px;
+        }
+    
+        h2 {
+            margin: 0;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+        }
+    
+        .line-break {
+            height: 3px;
+            width: 100%;
+            background-color: $set1color3;
+            margin: 40px 0;
+        }
+    
+        .hero-button {
+            background-color: $set1color3;
+            border-radius: 10px;
+            text-transform: uppercase;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 35px;
+    
+            &:hover {
+                color: $set1color4;
+                background-color: $set1color2;
+            }
+        }
+    }
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+
+    article {
+        padding: 4em 4em 2em 4em;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: default;
+        height: 450px;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease, -webkit-filter 1s ease;
+
+        &:nth-child(4n - 1), &:nth-child(4n - 2) {
+            width: 60%;
+        }
+
+        &:nth-child(6n - 5):before {
+            background-color: $overlay1;
+        }
+
+        &:nth-child(6n - 4):before {
+            background-color: $overlay2;
+        }
+
+        &:nth-child(6n - 3):before {
+            background-color: $overlay3;
+        }
+
+        &:nth-child(6n - 2):before {
+            background-color: $overlay4;
+        }
+
+        &::before {
+            bottom: 0;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            opacity: 0.85;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+            transition: opacity 0.5s ease;
+        }
+
+        &::after {
+            background-color: rgba(36, 41, 67, 0.25);
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        &:hover::before {
+            opacity: 0;
+        }
+
+        header {
+            position: relative;
+            z-index: 3;
+            color: $set1color1;
+        }
+    }
+}
