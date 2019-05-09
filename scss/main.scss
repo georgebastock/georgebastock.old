@@ -25,31 +25,46 @@
 // Set box model to border-box.
 html {
     box-sizing: border-box;
-
-    // Base page margin removed
-    body {
-        margin: 0;
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-    }
 }
 
 *, *:before, *:after {
     box-sizing: inherit;
 }
 
+// Base page margin removed
+body {
+    margin: 0;
+}
+
+// Default link styles
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 // Sets global font
 body {
     font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 0.025em;
+    line-height: 1.65;
+}
+
+// Removes styling from heading tags
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+// Removes styling from p tags
+p {
+    margin: 0;
+    padding: 0;
 }
 
 // Navigation styles
 nav {
-    background-color: $set1color3;
-    color: $set1color1;
+    background-color: $lightGreen;
+    color: $blue;
     padding: 20px;;
     display: flex;
     flex-direction: row;
@@ -57,7 +72,6 @@ nav {
     font-size: 26px;
     text-transform: uppercase; 
     font-weight: bold;
-    //border-bottom: 2px solid black;
 
     // Left side brand logo 
     .brand {
@@ -65,18 +79,18 @@ nav {
         padding: 10px 0;
 
         &:hover {
-            color: $set1color4;
+            color: $creme;
 
             .block-brand {
-                background-color: $set1color4;
+                background-color: $creme;
             }
         }
 
         // Blocky Lettering
         .block-brand {
-            background-color: $set1color1;
+            background-color: $blue;
             padding: 10px;
-            color: $set1color3;
+            color: $lightGreen;
         }
     }
 
@@ -92,17 +106,18 @@ nav {
 
             &:hover {
                 padding-bottom: 2px;
-                border-bottom: 2px solid $set1color4;
-                color: $set1color4;
+                border-bottom: 4px solid $creme;
+                color: $creme;
             }
         }
     }
 }
 
+// Hero styles
 #hero-page {
     height: 78vh;
-    background-color: $set1color4;
-    color: $set1color1;
+    background-color: $creme;
+    color: $blue;
     position: relative;
     display: flex;
     align-items: center;
@@ -112,38 +127,46 @@ nav {
         width: 70%;
 
         h1 {
-            margin: 0;
             font-size: 72px;
         }
     
         h2 {
-            margin: 0;
             font-size: 18px;
             text-transform: uppercase;
             font-weight: 600;
             letter-spacing: 0.25em;
+
+            i {
+                color: red;
+            }
         }
-    
+        
+        // Line
         .line-break {
-            height: 3px;
+            height: 4px;
             width: 100%;
-            background-color: $set1color3;
+            background-color: $lightGreen;
             margin: 40px 0;
         }
-    
+        
+        // Action button
         .hero-button {
-            background-color: $set1color3;
+            background-color: $lightGreen;
             border-radius: 10px;
             text-transform: uppercase;
             padding: 15px 25px;
             font-size: 18px;
             font-weight: 600;
             display: inline-block;
-            margin-top: 35px;
+            margin-top: 40px;
     
             &:hover {
-                color: $set1color4;
-                background-color: $set1color2;
+                color: $creme;
+                background-color: $darkGreen;
+            }
+
+            &:nth-of-type(3) {
+                margin-left: 15px;
             }
         }
     }
@@ -153,19 +176,19 @@ nav {
     display: flex;
     flex-wrap: wrap;
 
+    // Project block
     article {
         padding: 4em 4em 2em 4em;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         cursor: default;
-        height: 450px;
+        height: 50vh;
         width: 40%;
         display: flex;
         align-items: center;
         overflow: hidden;
         position: relative;
-        transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease, -webkit-filter 1s ease;
 
         &:nth-child(4n - 1), &:nth-child(4n - 2) {
             width: 60%;
@@ -211,15 +234,101 @@ nav {
             width: 100%;
             z-index: 1;
         }
+    }
+}
 
-        &:hover::before {
-            opacity: 0;
+// Bio Styles
+#about {
+    background-color: $creme;
+    color: $blue;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .inner-bio {
+        margin: 0 auto;
+        width: 70%;
+        padding: 130px 0 0;
+
+        h3 {
+            padding-bottom: 10px;
+            border-bottom: 4px solid $lightGreen;
+            font-size: 42px;
+            display: inline-block;
+            margin-bottom: 30px;
         }
 
-        header {
-            position: relative;
-            z-index: 3;
-            color: $set1color1;
+        p {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 32px;
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .inner-panels {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 70%;
+
+        .skill-panel {
+            box-shadow: 5px 5px 10px -3px rgba(0,0,0,0.75);
+            padding: 25px;
+            width: 23%;
+            display: flex;
+            flex-direction: column;
+            background-color: $lightGreen;
+            border-radius: 15px;
+
+            i {
+                font-size: 42px;
+                margin: 10px auto 25px;
+            }
+
+            .skill-heading {
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            .skill-description {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+        }
+    }
+
+    .double-column {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        width: 70%;
+        text-align: start;
+
+        .inner-column {
+            h4 {
+                text-align: start;
+            }
+
+            .tech-skills {
+                width: 48%;
+            }
+
+            .prof-skills {
+                width: 48%;
+            }
+        }
+        .inner-tech-skills {
+            width: 48%;
+        }
+
+        .inner-prof-skills {
+            width: 48%;
         }
     }
 }

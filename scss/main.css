@@ -4,22 +4,34 @@ html {
           box-sizing: border-box;
 }
 
-html body {
-  margin: 0;
-}
-
-html body a {
-  color: inherit;
-  text-decoration: none;
-}
-
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
 
 body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
   font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 0.025em;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 nav {
@@ -73,7 +85,7 @@ nav ul li {
 
 nav ul li:hover {
   padding-bottom: 2px;
-  border-bottom: 2px solid #EDF5E1;
+  border-bottom: 4px solid #EDF5E1;
   color: #EDF5E1;
 }
 
@@ -96,20 +108,22 @@ nav ul li:hover {
 }
 
 #hero-page .inner-hero h1 {
-  margin: 0;
   font-size: 72px;
 }
 
 #hero-page .inner-hero h2 {
-  margin: 0;
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.25em;
 }
 
+#hero-page .inner-hero h2 i {
+  color: red;
+}
+
 #hero-page .inner-hero .line-break {
-  height: 3px;
+  height: 4px;
   width: 100%;
   background-color: #5CDB95;
   margin: 40px 0;
@@ -123,12 +137,16 @@ nav ul li:hover {
   font-size: 18px;
   font-weight: 600;
   display: inline-block;
-  margin-top: 35px;
+  margin-top: 40px;
 }
 
 #hero-page .inner-hero .hero-button:hover {
   color: #EDF5E1;
   background-color: #379683;
+}
+
+#hero-page .inner-hero .hero-button:nth-of-type(3) {
+  margin-left: 15px;
 }
 
 #projects {
@@ -145,7 +163,7 @@ nav ul li:hover {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: default;
-  height: 450px;
+  height: 50vh;
   width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,7 +173,6 @@ nav ul li:hover {
           align-items: center;
   overflow: hidden;
   position: relative;
-  transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease, -webkit-filter 1s ease;
 }
 
 #projects article:nth-child(4n - 1), #projects article:nth-child(4n - 2) {
@@ -204,12 +221,121 @@ nav ul li:hover {
   z-index: 1;
 }
 
-#projects article:hover::before {
-  opacity: 0;
+#about {
+  background-color: #EDF5E1;
+  color: #05386B;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-#projects article header {
-  position: relative;
-  z-index: 3;
-  color: #05386B;
+#about .inner-bio {
+  margin: 0 auto;
+  width: 70%;
+  padding: 130px 0 0;
+}
+
+#about .inner-bio h3 {
+  padding-bottom: 10px;
+  border-bottom: 4px solid #5CDB95;
+  font-size: 42px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+#about .inner-bio p {
+  font-size: 22px;
+}
+
+#about h4 {
+  font-size: 32px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+#about .inner-panels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  width: 70%;
+}
+
+#about .inner-panels .skill-panel {
+  -webkit-box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.75);
+          box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.75);
+  padding: 25px;
+  width: 23%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #5CDB95;
+  border-radius: 15px;
+}
+
+#about .inner-panels .skill-panel i {
+  font-size: 42px;
+  margin: 10px auto 25px;
+}
+
+#about .inner-panels .skill-panel .skill-heading {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+#about .inner-panels .skill-panel .skill-description {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#about .double-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 auto;
+  width: 70%;
+  text-align: start;
+}
+
+#about .double-column .inner-column h4 {
+  text-align: start;
+}
+
+#about .double-column .inner-column .tech-skills {
+  width: 48%;
+}
+
+#about .double-column .inner-column .prof-skills {
+  width: 48%;
+}
+
+#about .double-column .inner-tech-skills {
+  width: 48%;
+}
+
+#about .double-column .inner-prof-skills {
+  width: 48%;
 }
