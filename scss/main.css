@@ -4,37 +4,65 @@ html {
           box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
-body {
+html body {
   margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-body {
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 0.025em;
   line-height: 1.65;
 }
 
-h1, h2, h3, h4, h5, h6 {
+html body a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html body h1, html body h2, html body h3, html body h4, html body h5, html body h6 {
   margin: 0;
   padding: 0;
 }
 
-p {
+html body p {
   margin: 0;
   padding: 0;
 }
 
-nav {
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.button {
+  background-color: #5CDB95;
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #EDF5E1;
+  background-color: #379683;
+}
+
+.button.hero {
+  margin-top: 40px;
+}
+
+.button.hero-two {
+  margin-left: 15px;
+}
+
+.button.projects {
+  margin: 0 auto;
+  width: 162px;
+  display: block;
+  margin-bottom: 40px;
+}
+
+header {
   background-color: #5CDB95;
   color: #05386B;
   padding: 20px;
@@ -53,44 +81,44 @@ nav {
   font-weight: bold;
 }
 
-nav .brand {
+header a.brand {
   margin-right: auto;
   padding: 10px 0;
 }
 
-nav .brand:hover {
+header a.brand:hover {
   color: #EDF5E1;
 }
 
-nav .brand:hover .block-brand {
+header a.brand:hover .block-brand {
   background-color: #EDF5E1;
 }
 
-nav .brand .block-brand {
+header a.brand .brand-block {
   background-color: #05386B;
   padding: 10px;
   color: #5CDB95;
 }
 
-nav ul {
+header nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-nav ul li {
+header nav ul li {
   display: inline;
   margin: 0px 10px;
 }
 
-nav ul li:hover {
+header nav ul li:hover {
   padding-bottom: 2px;
   border-bottom: 4px solid #EDF5E1;
   color: #EDF5E1;
 }
 
-#hero-page {
-  height: 78vh;
+#hero {
+  height: 80vh;
   background-color: #EDF5E1;
   color: #05386B;
   position: relative;
@@ -102,240 +130,120 @@ nav ul li:hover {
           align-items: center;
 }
 
-#hero-page .inner-hero {
+#hero .inner-hero {
   margin: 0 auto;
   width: 70%;
 }
 
-#hero-page .inner-hero h1 {
+#hero .inner-hero h1 {
   font-size: 72px;
 }
 
-#hero-page .inner-hero h2 {
+#hero .inner-hero h2 {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.25em;
 }
 
-#hero-page .inner-hero h2 i {
+#hero .inner-hero h2 i {
   color: red;
 }
 
-#hero-page .inner-hero .line-break {
+#hero .inner-hero .line-break {
   height: 4px;
   width: 100%;
   background-color: #5CDB95;
   margin: 40px 0;
 }
 
-#hero-page .inner-hero .hero-button {
-  background-color: #5CDB95;
-  border-radius: 10px;
-  text-transform: uppercase;
-  padding: 15px 25px;
-  font-size: 18px;
-  font-weight: 600;
-  display: inline-block;
-  margin-top: 40px;
-}
-
-#hero-page .inner-hero .hero-button:hover {
-  color: #EDF5E1;
-  background-color: #379683;
-}
-
-#hero-page .inner-hero .hero-button:nth-of-type(3) {
-  margin-left: 15px;
-}
-
 #projects {
+  background-color: #EDF5E1;
+  color: #05386B;
+  position: relative;
+  z-index: 0;
+}
+
+#projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #5CDB95;
+  width: 100%;
+  height: 45vh;
+  z-index: -1;
+}
+
+#projects .inner-projects {
+  margin: 0 auto;
+  width: 70%;
+}
+
+#projects .inner-projects .arrow-wrapper {
+  -webkit-transition-duration: 600ms;
+          transition-duration: 600ms;
+}
+
+#projects .inner-projects .arrow-wrapper .scroll-arrow {
+  position: absolute;
+  top: 16px;
+  width: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+#projects .inner-projects .heading {
+  text-align: center;
+  padding-top: 60px;
+}
+
+#projects .inner-projects .heading h2 {
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom: 4px solid #05386B;
+  margin-bottom: 15px;
+}
+
+#projects .inner-projects .heading h3 {
+  font-weight: normal;
+}
+
+#projects .inner-projects .heading h3 a {
+  border-bottom: 2px solid #05386B;
+}
+
+#projects .inner-projects .project-panels {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-#projects article {
-  padding: 4em 4em 2em 4em;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: default;
-  height: 50vh;
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
-  position: relative;
-}
-
-#projects article:nth-child(4n - 1), #projects article:nth-child(4n - 2) {
-  width: 60%;
-}
-
-#projects article:nth-child(6n - 5):before {
-  background-color: #8d82c4;
-}
-
-#projects article:nth-child(6n - 4):before {
-  background-color: #6fc3df;
-}
-
-#projects article:nth-child(6n - 3):before {
-  background-color: #CCB154;
-}
-
-#projects article:nth-child(6n - 2):before {
-  background-color: #539151;
-}
-
-#projects article::before {
-  bottom: 0;
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  opacity: 0.85;
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-  -webkit-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
-}
-
-#projects article::after {
-  background-color: rgba(36, 41, 67, 0.25);
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-#about {
-  background-color: #EDF5E1;
-  color: #05386B;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#about .inner-bio {
-  margin: 0 auto;
-  width: 70%;
-  padding: 130px 0 0;
-}
-
-#about .inner-bio h3 {
-  padding-bottom: 10px;
-  border-bottom: 4px solid #5CDB95;
-  font-size: 42px;
-  display: inline-block;
-  margin-bottom: 30px;
-}
-
-#about .inner-bio p {
-  font-size: 22px;
-}
-
-#about h4 {
-  font-size: 32px;
-  text-align: center;
-  margin: 40px 0;
-}
-
-#about .inner-panels {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 auto;
-  width: 70%;
 }
 
-#about .inner-panels .skill-panel {
-  -webkit-box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.75);
-          box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.75);
-  padding: 25px;
-  width: 23%;
+#projects .inner-projects .project-panels .project-panel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-preferred-size: calc(50% - 40px);
+      flex-basis: calc(50% - 40px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #5CDB95;
-  border-radius: 15px;
+  width: 20%;
 }
 
-#about .inner-panels .skill-panel i {
-  font-size: 42px;
-  margin: 10px auto 25px;
-}
-
-#about .inner-panels .skill-panel .skill-heading {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-#about .inner-panels .skill-panel .skill-description {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-#about .double-column {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin: 0 auto;
-  width: 70%;
-  text-align: start;
-}
-
-#about .double-column .inner-column h4 {
-  text-align: start;
-}
-
-#about .double-column .inner-column .tech-skills {
-  width: 48%;
-}
-
-#about .double-column .inner-column .prof-skills {
-  width: 48%;
-}
-
-#about .double-column .inner-tech-skills {
-  width: 48%;
-}
-
-#about .double-column .inner-prof-skills {
-  width: 48%;
+#projects .inner-projects .project-panels .project-panel .project-details {
+  display: none;
 }

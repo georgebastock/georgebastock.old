@@ -1,0 +1,32 @@
+// Action button
+.button {
+    background-color: $lightGreen;
+    border-radius: 10px;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+
+    cursor: pointer;
+
+    &:hover {
+        color: $creme;
+        background-color: $darkGreen;
+    }
+
+    &.hero {
+        margin-top: 40px;
+    }
+
+    &.hero-two {
+        margin-left: 15px;
+    }
+
+    &.projects {
+        margin: 0 auto;
+        width: 162px;
+        display: block;
+        margin-bottom: 40px;
+    }
+}

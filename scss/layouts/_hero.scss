@@ -1,0 +1,36 @@
+#hero {
+    height: 80vh;
+    background-color: $creme;
+    color: $blue;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .inner-hero {
+        margin: 0 auto;
+        width: 70%;
+
+        h1 {
+            font-size: 72px;
+        }
+    
+        h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+
+            i {
+                color: red;
+            }
+        }
+        
+        // Line
+        .line-break {
+            height: 4px;
+            width: 100%;
+            background-color: $lightGreen;
+            margin: 40px 0;
+        }
+    }
+}
