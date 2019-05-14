@@ -9,6 +9,10 @@ html body {
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 0.025em;
   line-height: 1.65;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 html body a {
@@ -42,30 +46,30 @@ html body p {
   cursor: pointer;
 }
 
-.button:hover {
-  color: #EDF5E1;
-  background-color: #379683;
-}
-
-.button.hero {
-  margin-top: 40px;
-}
-
-.button.hero-two {
-  margin-left: 15px;
-}
-
-.button.projects {
+.button.project-button {
   margin: 0 auto;
   width: 162px;
   display: block;
-  margin-bottom: 40px;
 }
 
-header {
+.button:hover {
+  color: #EDF5E1;
+  background-color: #379683;
+  -webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
+          animation: pulsate-bck 0.5s ease-in-out infinite both;
+}
+
+.navbar {
   background-color: #5CDB95;
   color: #05386B;
-  padding: 20px;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.navbar .container {
+  margin: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,51 +80,106 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 26px;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
-header a.brand {
+.navbar .container .navbar-brand {
   margin-right: auto;
-  padding: 10px 0;
 }
 
-header a.brand:hover {
+.navbar .container .navbar-brand:hover {
   color: #EDF5E1;
 }
 
-header a.brand:hover .block-brand {
+.navbar .container .navbar-brand:hover .inverted {
   background-color: #EDF5E1;
 }
 
-header a.brand .brand-block {
+.navbar .container .navbar-brand .inverted {
   background-color: #05386B;
   padding: 10px;
   color: #5CDB95;
+  margin-right: 10px;
 }
 
-header nav ul {
+.navbar .container .navbar-menu {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-header nav ul li {
+.navbar .container .navbar-menu .navbar-item {
   display: inline;
   margin: 0px 10px;
 }
 
-header nav ul li:hover {
+.navbar .container .navbar-menu .navbar-item:hover {
   padding-bottom: 2px;
   border-bottom: 4px solid #EDF5E1;
   color: #EDF5E1;
 }
 
-#hero {
-  height: 80vh;
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.hero {
   background-color: #EDF5E1;
   color: #05386B;
+}
+
+.hero .container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -128,33 +187,60 @@ header nav ul li:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-#hero .inner-hero {
   margin: 0 auto;
   width: 70%;
+  height: 82vh;
 }
 
-#hero .inner-hero h1 {
+.hero .container .hero-body {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: default;
+}
+
+.hero .container .hero-body h1 {
   font-size: 72px;
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+          animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
-#hero .inner-hero h2 {
+.hero .container .hero-body h1 .letter:hover {
+  color: #5CDB95;
+}
+
+.hero .container .hero-body h1 .letter:active {
+  color: #379683;
+}
+
+.hero .container .hero-body .line-break {
+  height: 4px;
+  background-color: #5CDB95;
+  margin: 40px 0;
+}
+
+.hero .container .hero-body h2 {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.25em;
 }
 
-#hero .inner-hero h2 i {
+.hero .container .hero-body h2 i {
   color: red;
 }
 
-#hero .inner-hero .line-break {
-  height: 4px;
-  width: 100%;
-  background-color: #5CDB95;
-  margin: 40px 0;
+.hero .container .hero-body .action-buttons {
+  margin-top: 40px;
+}
+
+.hero .container .hero-body .action-buttons .button:nth-last-of-type(1) {
+  margin-left: 15px;
 }
 
 #projects {
@@ -178,6 +264,7 @@ header nav ul li:hover {
 #projects .inner-projects {
   margin: 0 auto;
   width: 70%;
+  padding-bottom: 43px;
 }
 
 #projects .inner-projects .arrow-wrapper {
@@ -215,10 +302,16 @@ header nav ul li:hover {
 
 #projects .inner-projects .heading h3 {
   font-weight: normal;
+  font-size: 20px;
 }
 
 #projects .inner-projects .heading h3 a {
   border-bottom: 2px solid #05386B;
+}
+
+#projects .inner-projects .heading h3 a:hover {
+  color: #EDF5E1;
+  border-color: #EDF5E1;
 }
 
 #projects .inner-projects .project-grid {
@@ -230,7 +323,7 @@ header nav ul li:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 40px 0;
+  margin: 40px 0 35px;
 }
 
 #projects .inner-projects .project-grid .project-panel {
@@ -239,6 +332,22 @@ header nav ul li:hover {
           flex: none;
   width: 30%;
   padding: 5px;
+  position: relative;
+}
+
+#projects .inner-projects .project-grid .project-panel::before {
+  content: '';
+  position: absolute;
+  width: 98%;
+  height: 95%;
+  border-radius: 10px;
+  margin: 4px 0px 0px 4px;
+  top: 0;
+  left: 0;
+  background: #05386B;
+  z-index: 1;
+  opacity: 0.6;
+  display: none;
 }
 
 #projects .inner-projects .project-grid .project-panel.bottom {
@@ -248,10 +357,36 @@ header nav ul li:hover {
 #projects .inner-projects .project-grid .project-panel img {
   width: 100%;
   border-radius: 10px;
+  position: relative;
 }
 
 #projects .inner-projects .project-grid .project-panel .project-details {
   display: none;
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  color: #5CDB95;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#projects .inner-projects .project-grid .project-panel .project-details h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: -5px;
+}
+
+#projects .inner-projects .project-grid .project-panel .project-details p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#projects .inner-projects .project-grid .project-panel:hover::before {
+  display: block;
+}
+
+#projects .inner-projects .project-grid .project-panel:hover .project-details {
+  display: block;
 }
 
 #about {
@@ -259,6 +394,7 @@ header nav ul li:hover {
   color: #05386B;
   position: relative;
   z-index: 0;
+  height: 100vh;
 }
 
 #about::before {
@@ -275,5 +411,56 @@ header nav ul li:hover {
 #about .inner-about {
   margin: 0 auto;
   width: 70%;
-  padding: 130px 0 0;
+}
+
+#about .inner-about .heading {
+  padding: 80px 0;
+}
+
+#about .inner-about .heading h2 {
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom: 4px solid #05386B;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+#about .inner-about .heading p {
+  font-size: 20px;
+}
+
+#about .inner-about .skill-picker {
+  padding: 80px 0;
+  text-align: center;
+}
+
+#about .inner-about .skill-picker h3 {
+  font-size: 24px;
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom: 4px solid #05386B;
+  margin-bottom: 25px;
+}
+
+#about .inner-about .skill-picker p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+#about .inner-about .skill-picker .icon-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 200px;
+}
+
+#about .inner-about .skill-picker .icon-list img {
+  width: 100px;
+  height: 100%;
 }

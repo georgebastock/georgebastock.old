@@ -1,36 +1,88 @@
-#hero {
-    height: 80vh;
+// -----------------------------------------------------------------------------------------------
+// This file contains:
+//                      scss file with all styles connecting to the hero section of the site.
+// -----------------------------------------------------------------------------------------------
+
+@keyframes text-focus-in {
+    0% {
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulsate-bck {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+.hero {
     background-color: $creme;
     color: $blue;
-    position: relative;
-    display: flex;
-    align-items: center;
 
-    .inner-hero {
+    .container {
+        position: relative;
+        display: flex;
+        align-items: center;
         margin: 0 auto;
         width: 70%;
+        height: 82vh;
 
-        h1 {
-            font-size: 72px;
-        }
-    
-        h2 {
-            font-size: 18px;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.25em;
-
-            i {
-                color: red;
-            }
-        }
-        
-        // Line
-        .line-break {
-            height: 4px;
+        .hero-body {
             width: 100%;
-            background-color: $lightGreen;
-            margin: 40px 0;
+            display: flex;
+            flex-direction: column;
+            cursor: default;
+
+            h1 {
+                font-size: 72px;
+                animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+                
+                .letter {
+                    &:hover {
+                        color: $lightGreen;
+                    }
+
+                    &:active {
+                        color: $darkGreen;
+                    }
+                }
+            }
+
+            .line-break {
+                height: 4px;
+                background-color: $lightGreen;
+                margin: 40px 0;
+            }
+        
+            h2 {
+                font-size: 18px;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 0.25em;
+    
+                i {
+                    color: red;
+                }
+            }
+
+            .action-buttons {
+                margin-top: 40px;
+        
+                .button:nth-last-of-type(1) {
+                    margin-left: 15px;
+                }
+            }
         }
     }
 }

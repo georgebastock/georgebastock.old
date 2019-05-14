@@ -1,4 +1,8 @@
-// Action button
+// -----------------------------------------------------------------------------------------------
+// This file contains:
+//                      scss file with all button style variation.
+// -----------------------------------------------------------------------------------------------
+
 .button {
     background-color: $lightGreen;
     border-radius: 10px;
@@ -7,26 +11,18 @@
     font-size: 18px;
     font-weight: 600;
     display: inline-block;
-
     cursor: pointer;
+
+    &.project-button {
+        margin: 0 auto;
+        width: 162px;
+        display: block;
+    }
 
     &:hover {
         color: $creme;
         background-color: $darkGreen;
-    }
 
-    &.hero {
-        margin-top: 40px;
-    }
-
-    &.hero-two {
-        margin-left: 15px;
-    }
-
-    &.projects {
-        margin: 0 auto;
-        width: 162px;
-        display: block;
-        margin-bottom: 40px;
+        animation: pulsate-bck 0.5s ease-in-out infinite both;
     }
 }

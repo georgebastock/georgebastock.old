@@ -18,6 +18,7 @@
     .inner-projects {
         margin: 0 auto;
         width: 70%;
+        padding-bottom: 43px;
 
         .arrow-wrapper {
             transition-duration: 600ms;
@@ -51,9 +52,15 @@
 
             h3 {
                 font-weight: normal;
+                font-size: 20px;
 
                 a {
                     border-bottom: 2px solid $blue;
+
+                    &:hover {
+                        color: $creme;
+                        border-color: $creme;
+                    }
                 }
             }
         }
@@ -62,12 +69,28 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 40px 0;
+            margin: 40px 0 35px;
 
             .project-panel {
                 flex: none;
                 width: 30%;
                 padding: 5px;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 98%;
+                    height: 95%;
+                    border-radius: 10px;
+                    margin: 4px 0px 0px 4px;
+                    top: 0;
+                    left: 0;
+                    background: $blue;
+                    z-index: 1;
+                    opacity: 0.6;
+                    display: none;
+                }
 
                 &.bottom {
                     margin-top: -7px;
@@ -76,10 +99,38 @@
                 img {
                     width: 100%;
                     border-radius: 10px;
+                    position: relative;
                 }
 
                 .project-details {
                     display: none;
+                    position: absolute;
+                    top: 25px;
+                    left: 30px;
+                    color: $lightGreen;
+                    z-index: 2;
+                    cursor: pointer;
+
+                    h4 {
+                        font-size: 30px;
+                        font-weight: bold;
+                        margin-bottom: -5px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                }
+
+                &:hover {
+                    &::before {
+                        display: block;
+                    }
+
+                    .project-details {
+                        display: block;
+                    }
                 }
             }
         }

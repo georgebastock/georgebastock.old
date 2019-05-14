@@ -11,6 +11,9 @@ html {
         letter-spacing: 0.025em;
         line-height: 1.65;
 
+        // Removes mouse highlight
+        user-select: none;
+        
         a {
             // Default link styles
             color: inherit;
