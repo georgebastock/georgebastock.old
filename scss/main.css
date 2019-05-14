@@ -171,7 +171,7 @@ header nav ul li:hover {
   left: 0;
   background-color: #5CDB95;
   width: 100%;
-  height: 45vh;
+  height: 42vh;
   z-index: -1;
 }
 
@@ -187,7 +187,7 @@ header nav ul li:hover {
 
 #projects .inner-projects .arrow-wrapper .scroll-arrow {
   position: absolute;
-  top: 16px;
+  top: 22px;
   width: 40px;
   margin-left: auto;
   margin-right: auto;
@@ -196,9 +196,14 @@ header nav ul li:hover {
   cursor: pointer;
 }
 
+#projects .inner-projects .arrow-wrapper .scroll-arrow:hover {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
 #projects .inner-projects .heading {
   text-align: center;
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 #projects .inner-projects .heading h2 {
@@ -216,34 +221,59 @@ header nav ul li:hover {
   border-bottom: 2px solid #05386B;
 }
 
-#projects .inner-projects .project-panels {
+#projects .inner-projects .project-grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-#projects .inner-projects .project-panels .project-panel {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-preferred-size: calc(50% - 40px);
-      flex-basis: calc(50% - 40px);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 20%;
+  margin: 40px 0;
 }
 
-#projects .inner-projects .project-panels .project-panel .project-details {
+#projects .inner-projects .project-grid .project-panel {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  width: 30%;
+  padding: 5px;
+}
+
+#projects .inner-projects .project-grid .project-panel.bottom {
+  margin-top: -7px;
+}
+
+#projects .inner-projects .project-grid .project-panel img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#projects .inner-projects .project-grid .project-panel .project-details {
   display: none;
+}
+
+#about {
+  background-color: #EDF5E1;
+  color: #05386B;
+  position: relative;
+  z-index: 0;
+}
+
+#about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #5CDB95;
+  width: 100%;
+  height: 42vh;
+  z-index: -1;
+}
+
+#about .inner-about {
+  margin: 0 auto;
+  width: 70%;
+  padding: 130px 0 0;
 }
