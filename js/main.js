@@ -44,6 +44,23 @@
         $("h1").text().split("").map(a => `<span class="letter">${a}</span>`)
     )
 
+// Animation delay
+    $(".action-button").mouseenter(function() {
+        $(this).addClass("animated");
+    });
+
+    $(".action-button").bind("webkitAnimationEnd mozAnimationEnd animationend", function(){
+        $(this).removeClass("animated");
+    })
+
+// Line double click effect
+    $(".line-break").dblclick(function(){
+        $(".line-break").addClass("animated").delay(2000).queue(function(next){
+            $(this).removeClass("animated");
+            next();
+        });
+    })
+
 // Disable right click
 //$(document).on("contextmenu", function (event) { event.preventDefault(); });
 

@@ -55,8 +55,45 @@ html body p {
 .button:hover {
   color: #EDF5E1;
   background-color: #379683;
-  -webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
-          animation: pulsate-bck 0.5s ease-in-out infinite both;
+}
+
+.button.animated {
+  -webkit-animation-name: pulsate;
+          animation-name: pulsate;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .navbar {
@@ -118,62 +155,6 @@ html body p {
   color: #EDF5E1;
 }
 
-@-webkit-keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes pulsate-bck {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes pulsate-bck {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 .hero {
   background-color: #EDF5E1;
   color: #05386B;
@@ -189,39 +170,38 @@ html body p {
           align-items: center;
   margin: 0 auto;
   width: 70%;
-  height: 82vh;
+  height: 82.5vh;
 }
 
 .hero .container .hero-body {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  cursor: default;
+  overflow: hidden;
 }
 
 .hero .container .hero-body h1 {
   font-size: 72px;
-  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-          animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 .hero .container .hero-body h1 .letter:hover {
   color: #5CDB95;
 }
 
-.hero .container .hero-body h1 .letter:active {
-  color: #379683;
-}
-
 .hero .container .hero-body .line-break {
   height: 4px;
   background-color: #5CDB95;
-  margin: 40px 0;
+  margin: 40px auto;
+  width: 100%;
+}
+
+.hero .container .hero-body .line-break.animated {
+  -webkit-animation-name: doubleClick;
+          animation-name: doubleClick;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 
 .hero .container .hero-body h2 {
@@ -235,6 +215,10 @@ html body p {
   color: red;
 }
 
+.hero .container .hero-body h2 i:hover {
+  color: #5CDB95;
+}
+
 .hero .container .hero-body .action-buttons {
   margin-top: 40px;
 }
@@ -243,14 +227,38 @@ html body p {
   margin-left: 15px;
 }
 
-#projects {
+@-webkit-keyframes doubleClick {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes doubleClick {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.projects {
   background-color: #EDF5E1;
   color: #05386B;
   position: relative;
   z-index: 0;
 }
 
-#projects::before {
+.projects::before {
   content: "";
   position: absolute;
   top: 0;
@@ -261,60 +269,56 @@ html body p {
   z-index: -1;
 }
 
-#projects .inner-projects {
+.projects .container {
   margin: 0 auto;
   width: 70%;
-  padding-bottom: 43px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
 }
 
-#projects .inner-projects .arrow-wrapper {
-  -webkit-transition-duration: 600ms;
-          transition-duration: 600ms;
-}
-
-#projects .inner-projects .arrow-wrapper .scroll-arrow {
-  position: absolute;
-  top: 22px;
+.projects .container .scroll-arrow {
   width: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
   cursor: pointer;
+  margin: 22px 0;
 }
 
-#projects .inner-projects .arrow-wrapper .scroll-arrow:hover {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-}
-
-#projects .inner-projects .heading {
+.projects .container .projects-body .projects-summary {
   text-align: center;
-  padding-top: 80px;
+  margin-bottom: 45px;
 }
 
-#projects .inner-projects .heading h2 {
+.projects .container .projects-body .projects-summary h2 {
   display: inline-block;
   padding-bottom: 2px;
   border-bottom: 4px solid #05386B;
   margin-bottom: 15px;
 }
 
-#projects .inner-projects .heading h3 {
+.projects .container .projects-body .projects-summary h3 {
   font-weight: normal;
   font-size: 20px;
 }
 
-#projects .inner-projects .heading h3 a {
+.projects .container .projects-body .projects-summary h3 a {
   border-bottom: 2px solid #05386B;
 }
 
-#projects .inner-projects .heading h3 a:hover {
+.projects .container .projects-body .projects-summary h3 a:hover {
   color: #EDF5E1;
   border-color: #EDF5E1;
 }
 
-#projects .inner-projects .project-grid {
+.projects .container .projects-grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,19 +327,15 @@ html body p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 40px 0 35px;
 }
 
-#projects .inner-projects .project-grid .project-panel {
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
+.projects .container .projects-grid .project-panel {
   width: 30%;
   padding: 5px;
   position: relative;
 }
 
-#projects .inner-projects .project-grid .project-panel::before {
+.projects .container .projects-grid .project-panel::before {
   content: '';
   position: absolute;
   width: 98%;
@@ -350,17 +350,17 @@ html body p {
   display: none;
 }
 
-#projects .inner-projects .project-grid .project-panel.bottom {
+.projects .container .projects-grid .project-panel:nth-last-child(-n+3) {
   margin-top: -7px;
 }
 
-#projects .inner-projects .project-grid .project-panel img {
+.projects .container .projects-grid .project-panel .project-image {
   width: 100%;
   border-radius: 10px;
   position: relative;
 }
 
-#projects .inner-projects .project-grid .project-panel .project-details {
+.projects .container .projects-grid .project-panel .project-details {
   display: none;
   position: absolute;
   top: 25px;
@@ -370,22 +370,22 @@ html body p {
   cursor: pointer;
 }
 
-#projects .inner-projects .project-grid .project-panel .project-details h4 {
+.projects .container .projects-grid .project-panel .project-details h4 {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: -5px;
 }
 
-#projects .inner-projects .project-grid .project-panel .project-details p {
+.projects .container .projects-grid .project-panel .project-details p {
   font-size: 14px;
   font-weight: bold;
 }
 
-#projects .inner-projects .project-grid .project-panel:hover::before {
+.projects .container .projects-grid .project-panel:hover::before {
   display: block;
 }
 
-#projects .inner-projects .project-grid .project-panel:hover .project-details {
+.projects .container .projects-grid .project-panel:hover .project-details {
   display: block;
 }
 

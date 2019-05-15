@@ -3,29 +3,6 @@
 //                      scss file with all styles connecting to the hero section of the site.
 // -----------------------------------------------------------------------------------------------
 
-@keyframes text-focus-in {
-    0% {
-      filter: blur(12px);
-      opacity: 0;
-    }
-    100% {
-      filter: blur(0px);
-      opacity: 1;
-    }
-  }
-
-  @keyframes pulsate-bck {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(0.9);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
 .hero {
     background-color: $creme;
     color: $blue;
@@ -36,25 +13,18 @@
         align-items: center;
         margin: 0 auto;
         width: 70%;
-        height: 82vh;
+        height: 82.5vh;
 
         .hero-body {
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            cursor: default;
+            overflow: hidden;
 
             h1 {
                 font-size: 72px;
-                animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-                
+
                 .letter {
                     &:hover {
                         color: $lightGreen;
-                    }
-
-                    &:active {
-                        color: $darkGreen;
                     }
                 }
             }
@@ -62,7 +32,15 @@
             .line-break {
                 height: 4px;
                 background-color: $lightGreen;
-                margin: 40px 0;
+                margin: 40px auto;
+                width: 100%;
+
+                &.animated {
+                    animation-name: doubleClick;
+                    animation-duration: 2s;
+                    animation-timing-function: ease-in-out;
+                    animation-direction: alternate;
+                }
             }
         
             h2 {
@@ -73,6 +51,10 @@
     
                 i {
                     color: red;
+
+                    &:hover {
+						color: $lightGreen;
+                    }
                 }
             }
 
@@ -85,4 +67,20 @@
             }
         }
     }
+}
+
+// -----------------------------------------------------------------------------------------------
+// Section: Key Frames
+// -----------------------------------------------------------------------------------------------
+
+@keyframes doubleClick {
+	0% {
+        width: 100%;
+	}
+	50% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
 }

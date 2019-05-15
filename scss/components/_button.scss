@@ -22,7 +22,27 @@
     &:hover {
         color: $creme;
         background-color: $darkGreen;
+    }
 
-        animation: pulsate-bck 0.5s ease-in-out infinite both;
+    &.animated {
+        animation-name: pulsate;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+// -----------------------------------------------------------------------------------------------
+// Section: Key Frames
+// -----------------------------------------------------------------------------------------------
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
     }
 }

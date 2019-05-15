@@ -1,4 +1,9 @@
-#projects {
+// -----------------------------------------------------------------------------------------------
+// This file contains:
+//                      scss file with all styles connecting to the project section of the site.
+// -----------------------------------------------------------------------------------------------
+
+.projects {
     background-color: $creme;
     color: $blue;
     position: relative;
@@ -15,64 +20,55 @@
         z-index: -1;
     }
 
-    .inner-projects {
+    .container {
         margin: 0 auto;
         width: 70%;
-        padding-bottom: 43px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
 
-        .arrow-wrapper {
-            transition-duration: 600ms;
-
-            .scroll-arrow {
-                position: absolute;
-                top: 22px;
-                width: 40px;
-                margin-left: auto;
-                margin-right: auto;
-                left: 0;
-                right: 0;
-                cursor: pointer;
-
-                &:hover {
-                    transform: scale(0.8);
-                }
-            }
+        .scroll-arrow {
+            width: 40px;
+            cursor: pointer;
+            margin: 22px 0; 
         }
 
-        .heading {
-            text-align: center;
-            padding-top: 80px;
+        .projects-body {
+            .projects-summary {
+                text-align: center;
+                margin-bottom: 45px;
 
-            h2 {
-                display: inline-block;
-                padding-bottom: 2px;
-                border-bottom: 4px solid $blue;
-                margin-bottom: 15px;
-            }
-
-            h3 {
-                font-weight: normal;
-                font-size: 20px;
-
-                a {
-                    border-bottom: 2px solid $blue;
-
-                    &:hover {
-                        color: $creme;
-                        border-color: $creme;
+                h2 {
+                    display: inline-block;
+                    padding-bottom: 2px;
+                    border-bottom: 4px solid $blue;
+                    margin-bottom: 15px;
+                }
+        
+                h3 {
+                    font-weight: normal;
+                    font-size: 20px;
+        
+                    a {
+                        border-bottom: 2px solid $blue;
+        
+                        &:hover {
+                            color: $creme;
+                            border-color: $creme;
+                        }
                     }
                 }
             }
         }
 
-        .project-grid {
+        .projects-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 40px 0 35px;
 
             .project-panel {
-                flex: none;
                 width: 30%;
                 padding: 5px;
                 position: relative;
@@ -92,11 +88,11 @@
                     display: none;
                 }
 
-                &.bottom {
+                &:nth-last-child(-n+3) {
                     margin-top: -7px;
                 }
 
-                img {
+                .project-image {
                     width: 100%;
                     border-radius: 10px;
                     position: relative;
