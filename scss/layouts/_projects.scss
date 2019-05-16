@@ -32,8 +32,12 @@
         .scroll-indicator {
             display: flex;
             justify-content: center;
-            margin: 24px 0;
+            margin: 20px 0;
             animation: scrollSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+
+            &.hidden {
+                visibility: hidden;
+            }
 
             span {
                 width: 25px;
@@ -55,9 +59,9 @@
                     top: 5px;
                     left: 50%;
                     content: '';
-                    width: 6px;
-                    height: 6px;
-                    margin-left: -3px;
+                    width: 5px;
+                    height: 5px;
+                    margin-left: -2.5px;
                     background-color: $blue;
                     border-radius: 100%;
                     animation: scrollDot 3s infinite;

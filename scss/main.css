@@ -93,6 +93,15 @@ html body p {
   text-transform: uppercase;
   font-weight: bold;
   padding: 20px 0;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  -webkit-transition: font-size 1s;
+  transition: font-size 1s;
+}
+
+.navbar.small {
+  font-size: 18px;
 }
 
 .navbar .container {
@@ -204,7 +213,7 @@ html body p {
           align-items: center;
   margin: 0 auto;
   width: 70%;
-  height: 82.5vh;
+  height: 92vh;
 }
 
 .hero .container .hero-body {
@@ -241,11 +250,6 @@ html body p {
 
 .hero .container .hero-body h2 i {
   color: red;
-}
-
-.hero .container .hero-body h2 i.vibe {
-  -webkit-animation: vibe 0.3s linear 3 both;
-          animation: vibe 0.3s linear 3 both;
 }
 
 .hero .container .hero-body h2 i:hover {
@@ -354,60 +358,6 @@ html body p {
   }
 }
 
-@-webkit-keyframes vibe {
-  0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  20% {
-    -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
-  }
-  40% {
-    -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
-  }
-  60% {
-    -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
-  }
-  80% {
-    -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
-  }
-  100% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-}
-
-@keyframes vibe {
-  0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  20% {
-    -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
-  }
-  40% {
-    -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
-  }
-  60% {
-    -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
-  }
-  80% {
-    -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
-  }
-  100% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-}
-
 .projects {
   background-color: #EDF5E1;
   color: #05386B;
@@ -450,9 +400,13 @@ html body p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 24px 0;
+  margin: 20px 0;
   -webkit-animation: scrollSlideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
           animation: scrollSlideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.projects .container .scroll-indicator.hidden {
+  visibility: hidden;
 }
 
 .projects .container .scroll-indicator span {
@@ -476,9 +430,9 @@ html body p {
   top: 5px;
   left: 50%;
   content: '';
-  width: 6px;
-  height: 6px;
-  margin-left: -3px;
+  width: 5px;
+  height: 5px;
+  margin-left: -2.5px;
   background-color: #05386B;
   border-radius: 100%;
   -webkit-animation: scrollDot 3s infinite;
