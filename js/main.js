@@ -56,7 +56,7 @@
         $(this).addClass("hoverAnimation");
     });
 
-    $(".action-button").bind("webkitAnimationEnd mozAnimationEnd animationend", function(){
+    $(".action-button").bind("webkitAnimationEnd mozAnimationEnd animationEnd", function(){
         $(this).removeClass("hoverAnimation");
     })
 
