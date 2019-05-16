@@ -29,15 +29,47 @@
         align-items: center;
         height: 100vh;
 
-        .scroll-arrow {
-            width: 40px;
-            cursor: pointer;
-            margin: 22px 0; 
-        }
+        .scroll-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 24px 0;
+            animation: scrollSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+
+            span {
+                width: 25px;
+                height: 35px;
+                border: 2px solid $blue;
+                border-radius: 50px;
+                position: relative;
+
+                &:hover {
+                    border-color: $creme;
+
+                    &::before {
+                        background-color: $creme;
+                    }
+                }
+    
+                &::before {
+                    position: absolute;
+                    top: 5px;
+                    left: 50%;
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    margin-left: -3px;
+                    background-color: $blue;
+                    border-radius: 100%;
+                    animation: scrollDot 3s infinite;
+                }
+            }
+        } 
 
         .projects-body {
             .projects-summary {
-                text-align: center;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
                 margin-bottom: 45px;
 
                 h2 {
@@ -130,5 +162,47 @@
                 }
             }
         }
+
+        .projects-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------------------------
+// Section: Key Frames
+// -----------------------------------------------------------------------------------------------
+
+@keyframes scrollDot {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    80% {
+        transform: translate(0, 15px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes scrollSlideUp {
+    0% {
+        transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+        transform-origin: 50% 100%;
+        filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scaleY(1) scaleX(1);
+        transform-origin: 50% 50%;
+        filter: blur(0);
+        opacity: 1;
     }
 }

@@ -10,20 +10,18 @@
 
     let currentHour = new Date().getHours();
 
-    let possibleTextDisplay = ["Good Morning!", "Good Afternoon!", "Good Evening!", "Good Night!", "Check Console!"]
+    let possibleTextDisplay = ["Good Morning!", "Good Afternoon!", "Good Evening!", "Check Console!"]
 
     if (currentHour != null) {
-        if (currentHour >= 4 && currentHour < 12) {
+        if (currentHour >= 3 && currentHour < 12) {
             heroTitleElement.textContent = possibleTextDisplay[0];
-        } else if (currentHour >= 12 && currentHour < 17) {
+        } else if (currentHour >= 12 && currentHour < 18) {
             heroTitleElement.textContent = possibleTextDisplay[1];
-        } else if (currentHour >= 17 && currentHour < 21) {
-            heroTitleElement.textContent = possibleTextDisplay[2];
         } else {
-            heroTitleElement.textContent = possibleTextDisplay[3];
+            heroTitleElement.textContent = possibleTextDisplay[2];
         }
     } else {
-        heroTitleElement.textContent = possibleTextDisplay[4];
+        heroTitleElement.textContent = possibleTextDisplay[3];
     }
 
 // Typing Sub Title
@@ -33,11 +31,13 @@
         backSpeed: 50,
         shuffle: true,
         backDelay: 2000,
-        startDelay: 200,
+        startDelay: 1600,
         loop: true
     }
 
-    var typed = new Typed("#typed", options);
+    $(document).ready(function(){
+        var typed = new Typed("#typed", options);
+    });
 
 // Lettering Effect
     $("h1").html(
@@ -46,20 +46,18 @@
 
 // Animation delay
     $(".action-button").mouseenter(function() {
-        $(this).addClass("animated");
+        $(this).removeClass("entranceAnimation");
+        $(this).addClass("hoverAnimation");
     });
 
     $(".action-button").bind("webkitAnimationEnd mozAnimationEnd animationend", function(){
-        $(this).removeClass("animated");
+        $(this).removeClass("hoverAnimation");
     })
 
-// Line double click effect
-    $(".line-break").dblclick(function(){
-        $(".line-break").addClass("animated").delay(2000).queue(function(next){
-            $(this).removeClass("animated");
-            next();
-        });
-    })
+// Heart animation on click
+    $('.fa-heart').click(function(){
+        $(this).toggleClass('vibe');
+    });
 
 // Disable right click
 //$(document).on("contextmenu", function (event) { event.preventDefault(); });

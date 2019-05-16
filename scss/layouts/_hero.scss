@@ -17,10 +17,10 @@
 
         .hero-body {
             width: 100%;
-            overflow: hidden;
 
             h1 {
                 font-size: 72px;
+                animation: heroTextEntrance 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.4s both;
 
                 .letter {
                     &:hover {
@@ -34,13 +34,7 @@
                 background-color: $lightGreen;
                 margin: 40px auto;
                 width: 100%;
-
-                &.animated {
-                    animation-name: doubleClick;
-                    animation-duration: 2s;
-                    animation-timing-function: ease-in-out;
-                    animation-direction: alternate;
-                }
+                animation: lineBreakEntrance 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.6s both;
             }
         
             h2 {
@@ -48,9 +42,14 @@
                 text-transform: uppercase;
                 font-weight: 600;
                 letter-spacing: 0.25em;
+                animation: heroTextEntrance 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.7s both;
     
                 i {
                     color: red;
+
+                    &.vibe {
+                        animation: vibe 0.3s linear 3 both;
+                    }
 
                     &:hover {
 						color: $lightGreen;
@@ -60,9 +59,17 @@
 
             .action-buttons {
                 margin-top: 40px;
-        
+                
+                .button.entranceAnimation {
+                    animation: heroTextEntrance 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
+                }
+
                 .button:nth-last-of-type(1) {
                     margin-left: 15px;
+                }
+
+                .button.entranceAnimation:nth-last-of-type(1) {
+                    animation: heroTextEntrance 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
                 }
             }
         }
@@ -73,14 +80,53 @@
 // Section: Key Frames
 // -----------------------------------------------------------------------------------------------
 
-@keyframes doubleClick {
-	0% {
-        width: 100%;
-	}
-	50% {
-		width: 0%;
-	}
-	100% {
-		width: 100%;
-	}
+@keyframes heroTextEntrance {
+    0% {
+        transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+        transform-origin: 100% 50%;
+        filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scaleY(1) scaleX(1);
+        transform-origin: 50% 50%;
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes lineBreakEntrance {
+    0% {
+        transform: scaleX(0);
+        transform-origin: 0% 0%;
+        opacity: 1;
+        filter: blur(5px);
+    }
+    100% {
+        transform: scaleX(1);
+        transform-origin: 0% 0%;
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes vibe {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
 }

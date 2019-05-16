@@ -13,21 +13,13 @@
     display: inline-block;
     cursor: pointer;
 
-    &.project-button {
-        margin: 0 auto;
-        width: 162px;
-        display: block;
-    }
-
     &:hover {
         color: $creme;
         background-color: $darkGreen;
     }
 
-    &.animated {
-        animation-name: pulsate;
-        animation-duration: 1s;
-        animation-timing-function: ease-in-out;
+    &.hoverAnimation {
+        animation: pulsate 1s ease-in-out !important;
     }
 }
 
