@@ -12,6 +12,7 @@
     font-weight: 600;
     display: inline-block;
     cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
 
     &:hover {
         color: $creme;

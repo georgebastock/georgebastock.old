@@ -39,7 +39,7 @@
 					</div>
 					<!-- Navigation Menu -->
 					<ul class="navbar-menu">
-						<li class="navbar-item">
+						<li data-menuanchor="projects" class="navbar-item">
 							<a href="#projects" draggable="false">Projects</a>
 						</li>
 						<li class="navbar-item">
@@ -64,8 +64,8 @@
 							<div class="line-break"></div>
 							<h2><span id="typed"></span></h2>
 							<div class="action-buttons">
-								<div class="button action-button entranceAnimation">Learn More</div>
-								<div class="button action-button entranceAnimation">Get In Contact</div>
+								<div class="button action-button">Learn More</div>
+								<div class="button action-button">Get In Contact</div>
 							</div>
 						</div>
 					</div>
@@ -73,60 +73,60 @@
 				<!-- Project Section -->
 				<section class="projects section">
 					<div class="container">
-						<div class="scroll-indicator">
+						<a href="#projects" class="scroll-indicator">
 							<span></span>
-						</div>
+						</a>
 						<div class="projects-body">
 							<div class="projects-summary">
 								<h2>My Recent Projects</h2>
 								<h3>Here are some of my projects. Want to see more? <a href="/">Email me</a>.</h3>
 							</div>
-							<div class="projects-grid">
-								<div class="project-panel">
+							<ul class="projects-grid">
+								<li class="project-panel">
 									<img class="project-image" src="images\project covers\first-milk.png">
 									<div class="project-details">
 										<h4>First Milk</h4>
 										<p>Live Website</p>
 									</div>
-								</div>
-								<div class="project-panel">
+								</li>
+								<li class="project-panel">
 									<img class="project-image" src="images\project covers\keplar-problem.png">
 									<div class="project-details">
 										<h4>The Kepler Problem</h4>
 										<p>Orbit Simulation</p>
 									</div>
-								</div>
-								<div class="project-panel">
+								</li>
+								<li class="project-panel">
 									<img class="project-image" src="images\project covers\netmatters.png">
 									<div class="project-details">
 										<h4>Netmatters</h4>
 										<p>Homepage Clone</p>
 									</div>
-								</div>
-								<div class="project-panel">
+								</li>
+								<li class="project-panel">
 									<img class="project-image" src="images\project covers\safe-disposal.png">
 									<div class="project-details">
 										<h4>Safe Disposal</h4>
 										<p>Live Website</p>
 									</div>
-								</div>
-								<div class="project-panel">
+								</li>
+								<li class="project-panel">
 									<img class="project-image" src="images\project covers\silicon-supplies.png">
 									<div class="project-details">
 										<h4>Silicon Supplies</h4>
 										<p>Live Website</p>
 									</div>
-								</div>
-								<div class="project-panel">
+								</li>
+								<li class="project-panel">
 									<img class="project-image" src="images\project covers\superior-freight.png">
 									<div class="project-details">
 										<h4>Superior Freight</h4>
 										<p>Live Website</p>
 									</div>
-								</div>
-							</div>
+								</li>
+							</ul>
 							<div class="projects-button">
-								<div class="button">View More...</div>
+								<div id="projects-button" class="button">View More...</div>
 							</div>
 						</div>
 					</div>

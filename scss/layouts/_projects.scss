@@ -33,7 +33,10 @@
             display: flex;
             justify-content: center;
             margin: 20px 0;
-            animation: scrollSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+
+            &.entranceAnimation {
+                animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+            }
 
             &.hidden {
                 visibility: hidden;
@@ -45,12 +48,17 @@
                 border: 2px solid $blue;
                 border-radius: 50px;
                 position: relative;
+                transition: transform 1s;
 
                 &:hover {
                     border-color: $creme;
+                    transform: scale(0.9);
 
                     &::before {
                         background-color: $creme;
+                        width: 5px;
+                        height: 5px;
+                        margin-left: -2.5px;
                     }
                 }
     
@@ -81,11 +89,19 @@
                     padding-bottom: 2px;
                     border-bottom: 4px solid $blue;
                     margin-bottom: 15px;
+
+                    &.entranceAnimation {
+                        animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+                    }
                 }
         
                 h3 {
                     font-weight: normal;
                     font-size: 20px;
+
+                    &.entranceAnimation {
+                        animation: blurSlideLeft 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+                    }
         
                     a {
                         border-bottom: 2px solid $blue;
@@ -103,11 +119,25 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
 
             .project-panel {
                 width: 30%;
                 padding: 5px;
                 position: relative;
+
+                &.entranceAnimation {
+                    animation: blurSlideUp 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+
+                    &:nth-child(1) { animation-delay: .5s }
+                    &:nth-child(2) { animation-delay: 1s }
+                    &:nth-child(3) { animation-delay: 1.5s }
+                    &:nth-child(4) { animation-delay: 2s }
+                    &:nth-child(5) { animation-delay: 2.5s }
+                    &:nth-child(6) { animation-delay: 3s }
+                }
 
                 &::before {
                     content: '';
@@ -193,20 +223,5 @@
     }
     100% {
         opacity: 0;
-    }
-}
-
-@keyframes scrollSlideUp {
-    0% {
-        transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
-        transform-origin: 50% 100%;
-        filter: blur(40px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0) scaleY(1) scaleX(1);
-        transform-origin: 50% 50%;
-        filter: blur(0);
-        opacity: 1;
     }
 }

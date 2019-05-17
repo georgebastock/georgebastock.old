@@ -51,12 +51,12 @@
     )
 
 // Animation delay
-    $(".action-button").mouseenter(function() {
+    $(".button").mouseenter(function() {
         $(this).removeClass("entranceAnimation");
         $(this).addClass("hoverAnimation");
     });
 
-    $(".action-button").bind("webkitAnimationEnd mozAnimationEnd animationEnd", function(){
+    $(".button").bind("webkitAnimationEnd mozAnimationEnd animationEnd", function(){
         $(this).removeClass("hoverAnimation");
     })
 
@@ -74,8 +74,32 @@
             licenseKey: 'YOUR_KEY_HERE',
             anchors: ['homepage', 'projects'],
             autoScrolling: true,
-            scrollBar: true
+            scrollBar: true,
+            menu: '.navbar-menu',
+
+            'onLeave': function(origin, destination, direction){
+
+                // Projects
+                if (destination.index == 1 && direction == 'down'){
+                    $('.projects-summary h2 ,.projects-summary h3 ,.project-panel').addClass('entranceAnimation');
+                }
+            }
         });
+    });
+
+// Initial homepage animations
+    $('.navbar .container ,.scroll-indicator').addClass('entranceAnimation');
+    $('.hero-body h1 ,.line-break ,.hero-body h2 ,.action-button').addClass('entranceAnimation');
+
+// Button coming soon click
+    $('#projects-button').click(function(){
+        var $this = $(this);
+        $this.toggleClass('comingSoon');
+        if($this.hasClass('comingSoon')){
+            $this.text('Coming Soon');			
+        } else {
+            $this.text('View More...');
+        }
     });
 
 // Disable right click
