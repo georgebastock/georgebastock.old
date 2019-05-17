@@ -612,8 +612,8 @@ html body p {
 }
 
 .projects .container .projects-body .projects-summary h2.entranceAnimation {
-  -webkit-animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
-          animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+  -webkit-animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.5s both;
+          animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.5s both;
 }
 
 .projects .container .projects-body .projects-summary h3 {
@@ -622,8 +622,8 @@ html body p {
 }
 
 .projects .container .projects-body .projects-summary h3.entranceAnimation {
-  -webkit-animation: blurSlideLeft 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
-          animation: blurSlideLeft 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+  -webkit-animation: blurSlideLeft 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.6s both;
+          animation: blurSlideLeft 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.6s both;
 }
 
 .projects .container .projects-body .projects-summary h3 a {
@@ -656,38 +656,38 @@ html body p {
 }
 
 .projects .container .projects-grid .project-panel.entranceAnimation {
-  -webkit-animation: blurSlideUp 1s cubic-bezier(0.23, 1, 0.32, 1) both;
-          animation: blurSlideUp 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+  -webkit-animation: blurSlideUp 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: blurSlideUp 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
 .projects .container .projects-grid .project-panel.entranceAnimation:nth-child(1) {
-  -webkit-animation-delay: .5s;
-          animation-delay: .5s;
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
 }
 
 .projects .container .projects-grid .project-panel.entranceAnimation:nth-child(2) {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
 }
 
 .projects .container .projects-grid .project-panel.entranceAnimation:nth-child(3) {
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
 }
 
 .projects .container .projects-grid .project-panel.entranceAnimation:nth-child(4) {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
 }
 
 .projects .container .projects-grid .project-panel.entranceAnimation:nth-child(5) {
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  -webkit-animation-delay: 1600ms;
+          animation-delay: 1600ms;
 }
 
 .projects .container .projects-grid .project-panel.entranceAnimation:nth-child(6) {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms;
 }
 
 .projects .container .projects-grid .project-panel::before {
@@ -701,8 +701,9 @@ html body p {
   left: 0;
   background: #05386B;
   z-index: 1;
-  opacity: 0.6;
-  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.7s;
+  transition: opacity 0.7s;
 }
 
 .projects .container .projects-grid .project-panel:nth-last-child(-n+3) {
@@ -716,13 +717,15 @@ html body p {
 }
 
 .projects .container .projects-grid .project-panel .project-details {
-  display: none;
   position: absolute;
   top: 25px;
   left: 30px;
   color: #5CDB95;
   z-index: 2;
+  opacity: 0;
   cursor: pointer;
+  -webkit-transition: opacity 0.7s;
+  transition: opacity 0.7s;
 }
 
 .projects .container .projects-grid .project-panel .project-details h4 {
@@ -737,11 +740,11 @@ html body p {
 }
 
 .projects .container .projects-grid .project-panel:hover::before {
-  display: block;
+  opacity: 0.6;
 }
 
 .projects .container .projects-grid .project-panel:hover .project-details {
-  display: block;
+  opacity: 1;
 }
 
 .projects .container .projects-button {
@@ -752,6 +755,11 @@ html body p {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 30px;
+}
+
+.projects .container .projects-button.entranceAnimation {
+  -webkit-animation: blurSlideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) 1.8s both;
+          animation: blurSlideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) 1.8s both;
 }
 
 @-webkit-keyframes scrollDot {
@@ -792,78 +800,6 @@ html body p {
   }
 }
 
-#about {
-  background-color: #EDF5E1;
-  color: #05386B;
-  position: relative;
-  z-index: 0;
-  height: 100vh;
-}
-
-#about::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #5CDB95;
-  width: 100%;
-  height: 42vh;
-  z-index: -1;
-}
-
-#about .inner-about {
-  margin: 0 auto;
-  width: 70%;
-}
-
-#about .inner-about .heading {
-  padding: 80px 0;
-}
-
-#about .inner-about .heading h2 {
-  display: inline-block;
-  padding-bottom: 2px;
-  border-bottom: 4px solid #05386B;
-  margin-bottom: 25px;
-  font-size: 24px;
-}
-
-#about .inner-about .heading p {
-  font-size: 20px;
-}
-
-#about .inner-about .skill-picker {
-  padding: 80px 0;
-  text-align: center;
-}
-
-#about .inner-about .skill-picker h3 {
-  font-size: 24px;
-  display: inline-block;
-  padding-bottom: 2px;
-  border-bottom: 4px solid #05386B;
-  margin-bottom: 25px;
-}
-
-#about .inner-about .skill-picker p {
-  font-size: 20px;
-  margin-bottom: 25px;
-}
-
-#about .inner-about .skill-picker .icon-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 200px;
-}
-
-#about .inner-about .skill-picker .icon-list img {
-  width: 100px;
-  height: 100%;
+.about {
+  padding-top: 50px !important;
 }

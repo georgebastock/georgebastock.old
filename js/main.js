@@ -60,34 +60,36 @@
         $(this).removeClass("hoverAnimation");
     })
 
-// Navbar scroll shrink / Scroll hide
-    $(document).ready(function($) {
-        $(window).on('scroll touchmove', function () {
-            $('#navbar').toggleClass('small', ($(document).scrollTop() > 400));
-            $('.scroll-indicator').toggleClass('hidden', ($(document).scrollTop() > 400))
-        }).scroll();
-    });
-
 // Fullpage Scroll
     $(document).ready(function() {
         $('#fullpage').fullpage({
             licenseKey: 'YOUR_KEY_HERE',
-            anchors: ['homepage', 'projects'],
+            anchors: ['homepage', 'projects', 'about'],
             autoScrolling: true,
-            scrollBar: true,
+            //scrollBar: true,
             menu: '.navbar-menu',
+            scrollOverflow: true,
 
             'onLeave': function(origin, destination, direction){
 
                 // Projects
-                if (destination.index == 1 && direction == 'down'){
-                    $('.projects-summary h2 ,.projects-summary h3 ,.project-panel').addClass('entranceAnimation');
+                if (destination.index == 1){
+                    $('.projects-summary h2 ,.projects-summary h3 ,.project-panel ,.projects-button').addClass('entranceAnimation');
+                }
+
+                if (destination.index != 0) {
+                    $('#navbar').addClass('small');
+                    $('.scroll-indicator').addClass('hidden');
+                } else {
+                    $('#navbar').removeClass('small');
+                    $('.scroll-indicator').removeClass('hidden');
                 }
             }
         });
     });
 
 // Initial homepage animations
+
     $('.navbar .container ,.scroll-indicator').addClass('entranceAnimation');
     $('.hero-body h1 ,.line-break ,.hero-body h2 ,.action-button').addClass('entranceAnimation');
 

@@ -91,7 +91,7 @@
                     margin-bottom: 15px;
 
                     &.entranceAnimation {
-                        animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+                        animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.5s both;
                     }
                 }
         
@@ -100,7 +100,7 @@
                     font-size: 20px;
 
                     &.entranceAnimation {
-                        animation: blurSlideLeft 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+                        animation: blurSlideLeft 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.6s both;
                     }
         
                     a {
@@ -129,14 +129,31 @@
                 position: relative;
 
                 &.entranceAnimation {
-                    animation: blurSlideUp 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+                    animation: blurSlideUp 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 
-                    &:nth-child(1) { animation-delay: .5s }
-                    &:nth-child(2) { animation-delay: 1s }
-                    &:nth-child(3) { animation-delay: 1.5s }
-                    &:nth-child(4) { animation-delay: 2s }
-                    &:nth-child(5) { animation-delay: 2.5s }
-                    &:nth-child(6) { animation-delay: 3s }
+                    &:nth-child(1) { 
+                        animation-delay: 800ms 
+                    }
+
+                    &:nth-child(2) { 
+                        animation-delay: 1000ms 
+                    }
+
+                    &:nth-child(3) { 
+                        animation-delay: 1200ms 
+                    }
+
+                    &:nth-child(4) { 
+                        animation-delay: 1400ms 
+                    }
+
+                    &:nth-child(5) { 
+                        animation-delay: 1600ms
+                    }
+
+                    &:nth-child(6) { 
+                        animation-delay: 1800ms
+                    }
                 }
 
                 &::before {
@@ -150,8 +167,8 @@
                     left: 0;
                     background: $blue;
                     z-index: 1;
-                    opacity: 0.6;
-                    display: none;
+                    opacity: 0;
+                    transition: opacity 0.7s;
                 }
 
                 &:nth-last-child(-n+3) {
@@ -165,13 +182,14 @@
                 }
 
                 .project-details {
-                    display: none;
                     position: absolute;
                     top: 25px;
                     left: 30px;
                     color: $lightGreen;
                     z-index: 2;
+                    opacity: 0;
                     cursor: pointer;
+                    transition: opacity 0.7s;
 
                     h4 {
                         font-size: 30px;
@@ -187,11 +205,11 @@
 
                 &:hover {
                     &::before {
-                        display: block;
+                        opacity: 0.6;
                     }
 
                     .project-details {
-                        display: block;
+                        opacity: 1;
                     }
                 }
             }
@@ -201,6 +219,10 @@
             display: flex;
             justify-content: center;
             margin-top: 30px;
+
+            &.entranceAnimation {
+                animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.8s both;
+            }
         }
     }
 }
