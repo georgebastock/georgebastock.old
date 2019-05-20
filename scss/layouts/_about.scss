@@ -1,3 +1,22 @@
+// -----------------------------------------------------------------------------------------------
+// This file contains:
+//                      scss file with all styles connecting to the about section of the site.
+// -----------------------------------------------------------------------------------------------
+
 .about {
-    padding-top: 50px !important;
+    padding-top: 69px !important;
+    background-color: $creme;
+    color: $blue;
+    position: relative;
+    z-index: 0;
+
+    .container {
+        margin: 0 auto;
+        width: 70%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+    }
 }

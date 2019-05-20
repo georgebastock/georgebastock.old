@@ -7,9 +7,7 @@
 
 // Time Title Changer - On Page Load
     let heroTitleElement = document.querySelector('#adaptiveTitle');
-
     let currentHour = new Date().getHours();
-
     let possibleTextDisplay = ["Good Morning!", "Good Afternoon!", "Good Evening!", "Check Console!"]
 
     if (currentHour != null) {
@@ -61,35 +59,37 @@
     })
 
 // Fullpage Scroll
-    $(document).ready(function() {
-        $('#fullpage').fullpage({
-            licenseKey: 'YOUR_KEY_HERE',
-            anchors: ['homepage', 'projects', 'about'],
-            autoScrolling: true,
-            //scrollBar: true,
-            menu: '.navbar-menu',
-            scrollOverflow: true,
-
-            'onLeave': function(origin, destination, direction){
-
-                // Projects
-                if (destination.index == 1){
-                    $('.projects-summary h2 ,.projects-summary h3 ,.project-panel ,.projects-button').addClass('entranceAnimation');
-                }
-
-                if (destination.index != 0) {
-                    $('#navbar').addClass('small');
-                    $('.scroll-indicator').addClass('hidden');
-                } else {
-                    $('#navbar').removeClass('small');
-                    $('.scroll-indicator').removeClass('hidden');
-                }
+    var myFullpage = new fullpage('#fullpage', {
+        //Navigation
+        menu: '.navbar-menu',
+        anchors: ['homepage', 'projects', 'about'],
+        //Scrolling
+        css3: true,
+        scrollingSpeed: 700,
+        autoScrolling: true,
+        scrollBar: false,
+        easing: 'easeInOutCubic',
+        scrollOverflow: true,
+        //Accessibility
+        keyboardScrolling: true,
+        //Custom selectors
+        lazyLoading: true,
+        //events
+        onLeave: function(origin, destination, direction){
+            if (destination.index == 1){
+                $('.projects-summary h2 ,.projects-summary h3 ,.project-panel ,.projects-button').addClass('entranceAnimation');
             }
-        });
+            if (destination.index != 0) {
+                $('#navbar').addClass('small');
+                $('.scroll-indicator').addClass('hidden');
+            } else {
+                $('#navbar').removeClass('small');
+                $('.scroll-indicator').removeClass('hidden');
+            }
+        },
     });
 
 // Initial homepage animations
-
     $('.navbar .container ,.scroll-indicator').addClass('entranceAnimation');
     $('.hero-body h1 ,.line-break ,.hero-body h2 ,.action-button').addClass('entranceAnimation');
 
