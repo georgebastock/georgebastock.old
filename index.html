@@ -44,7 +44,7 @@
 						<li data-menuanchor="projects" class="navbar-item">
 							<a href="#projects" draggable="false" title="My Projects">Projects</a>
 						</li>
-						<li class="navbar-item">
+						<li data-menuanchor="about" class="navbar-item">
 							<a href="#about" draggable="false" title="About Me">About</a>
 						</li>
 						<li class="navbar-item">
@@ -135,6 +135,7 @@
 				</section>
 				<!-- About Section -->
 				<section class="about section scrollPadding">
+					<div class="background-block"></div>
 					<div class="container">
 						<div class="about-body">
 							<div class="about-bio">
@@ -144,75 +145,47 @@
 							</div>
 							<div class="about-skills">
 								<h3>What Do I Use?</h3>
-								<p>I have experience with the following tools and technologies</p>
-								<div class="icon-list">
+								<p>I have experience with the following tools and technologies:</p>
 
+								<!-- Tab links -->
+								<div class="skill-tabs">
+									<div class="tab" onclick="selectTab(event, 'html')" id="defaultOpen"><img src="images\icons\html-icon.png"></div>
+									<div class="tab" onclick="selectTab(event, 'css')"><img src="images\icons\cs-icon.png"></div>
+									<div class="tab" onclick="selectTab(event, 'javascript')"><img src="images\icons\js-icon.png"></div>
+									<div class="tab" onclick="selectTab(event, 'sass')"><img src="images\icons\sas-icon.png"></div>
+									<div class="tab" onclick="selectTab(event, 'umbraco')"><img src="images\icons\umb-icon.png"></div>
+									<div class="tab" onclick="selectTab(event, 'bootstrap')"><img src="images\icons\bs-icon.png"></div>
 								</div>
-								<p>Tools and technologies I am currently learning</p>
-								<div class="icon-list">
-
-								</div>
-							</div>
-							<div class="about-testimonial">
-								<h3>Testimonials</h3>
-								<p>People I've worked with that have said some things</p>
-								<div class="testimonial">
-									<p>I'm a front end developer based in Norwich. I have over a year of experience in the industry and have a passion for building unique and interesting websites with a purpose, I want to make things that make a difference to people.</p>
-									<p>As a web developer, I enjoy getting every detail pixel perfect, making and showing off eye catching designs that reach people all over the world and constantly facing new challenges that are meaningful to me.</p>
-									<p>I'm a front end developer based in Norwich. I have over a year of experience in the industry and have a passion for building unique and interesting websites with a purpose, I want to make things that make a difference to people.</p>
-									<p>As a web developer, I enjoy getting every detail pixel perfect, making and showing off eye catching designs that reach people all over the world and constantly facing new challenges that are meaningful to me.</p>
-									<p>I'm a front end developer based in Norwich. I have over a year of experience in the industry and have a passion for building unique and interesting websites with a purpose, I want to make things that make a difference to people.</p>
-									<p>As a web developer, I enjoy getting every detail pixel perfect, making and showing off eye catching designs that reach people all over the world and constantly facing new challenges that are meaningful to me.</p>
-									<p>I'm a front end developer based in Norwich. I have over a year of experience in the industry and have a passion for building unique and interesting websites with a purpose, I want to make things that make a difference to people.</p>
-									<p>As a web developer, I enjoy getting every detail pixel perfect, making and showing off eye catching designs that reach people all over the world and constantly facing new challenges that are meaningful to me.</p>
-									<p>I'm a front end developer based in Norwich. I have over a year of experience in the industry and have a passion for building unique and interesting websites with a purpose, I want to make things that make a difference to people.</p>
-									<p>As a web developer, I enjoy getting every detail pixel perfect, making and showing off eye catching designs that reach people all over the world and constantly facing new challenges that are meaningful to me.</p>
-									<p>I'm a front end developer based in Norwich. I have over a year of experience in the industry and have a passion for building unique and interesting websites with a purpose, I want to make things that make a difference to people.</p>
-									<p>As a web developer, I enjoy getting every detail pixel perfect, making and showing off eye catching designs that reach people all over the world and constantly facing new challenges that are meaningful to me.</p>
-									<p>I'm a front end developer based in Norwich. I have over a year of experience in the industry and have a passion for building unique and interesting websites with a purpose, I want to make things that make a difference to people.</p>
-									<p>As a web developer, I enjoy getting every detail pixel perfect, making and showing off eye catching designs that reach people all over the world and constantly facing new challenges that are meaningful to me.</p>
-									<p>I'm a front end developer based in Norwich. I have over a year of experience in the industry and have a passion for building unique and interesting websites with a purpose, I want to make things that make a difference to people.</p>
-									<p>As a web developer, I enjoy getting every detail pixel perfect, making and showing off eye catching designs that reach people all over the world and constantly facing new challenges that are meaningful to me.</p>
-									<p>I'm a front end developer based in Norwich. I have over a year of experience in the industry and have a passion for building unique and interesting websites with a purpose, I want to make things that make a difference to people.</p>
-									<p>As a web developer, I enjoy getting every detail pixel perfect, making and showing off eye catching designs that reach people all over the world and constantly facing new challenges that are meaningful to me.</p>									
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-
-				<section class="about section scrollPadding">
-					<div class="container">
-						<div class="about-body">
-							<div class="about-bio">
-								<h2>About me</h2>
-								<p>I'm a front end developer based in Norwich. I have over a year of experience in the industry and have a passion for building unique and interesting websites with a purpose, I want to make things that make a difference to people.</p>
-								<p>As a web developer, I enjoy getting every detail pixel perfect, making and showing off eye catching designs that reach people all over the world and constantly facing new challenges that are meaningful to me.</p>
-							</div>
-							<div class="about-skills">
-								<h3>What Do I Use?</h3>
-								<p>I have experience with the following tools and technologies</p>
-								<div class="icon-list">
-
-								</div>
-								<p>Tools and technologies I am currently learning</p>
-								<div class="icon-list">
-
-								</div>
-							</div>
-							<div class="about-testimonial">
-								<h3>Testimonials</h3>
-								<p>People I've worked with that have said some things</p>
-								<div class="testimonial">
 									
+								<!-- Tab content -->
+								<div id="html" class="tab-contents">
+									<h4>HTML</h4>
+									<p>Test1</p>
+								</div>
+								<div id="css" class="tab-contents">
+									<h4>CSS</h4>
+									<p>Test2</p> 
+								</div>
+								<div id="javascript" class="tab-contents">
+									<h4>JavaScript</h4>
+									<p>Test3</p>
+								</div>
+								<div id="sass" class="tab-contents">
+									<h4>SASS</h4>
+									<p>Test4</p>
+								</div>
+								<div id="umbraco" class="tab-contents">
+									<h4>Umbraco</h4>
+									<p>Test5</p>
+								</div>
+								<div id="bootstrap" class="tab-contents">
+									<h4>Bootstrap</h4>
+									<p>Test6</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-
-
 			</div>
 		</main>
 		<footer></footer>	
@@ -220,3 +193,12 @@
 		<script src="js\main.js"></script>
 	</body>
 </html>
+
+	<!-- <p>Tools and technologies I am currently learning:</p>
+	<div class="icon-list"></div> -->
+
+	<!-- <div class="about-testimonial" style="height: 2000px;">
+		<h3>Testimonials</h3>
+		<p>People I've worked with that have said some things</p>
+		<div class="testimonial"></div>
+	</div> -->
