@@ -218,6 +218,7 @@ html body {
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 0.025em;
   line-height: 1.65;
+  font-size: 18px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -543,7 +544,7 @@ html body .fp-tooltip {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 20px 0;
+  margin: 20px 0 8px;
 }
 
 .projects .container .scroll-indicator.entranceAnimation {
@@ -805,7 +806,6 @@ html body .fp-tooltip {
 }
 
 .about {
-  padding-top: 69px !important;
   background-color: #EDF5E1;
   color: #05386B;
   position: relative;
@@ -826,5 +826,12 @@ html body .fp-tooltip {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+}
+
+.scrollPadding {
+  padding: 48px 0px 0px 0px !important;
+}
+
+.fp-tableCell {
+  padding: 0 !important;
 }

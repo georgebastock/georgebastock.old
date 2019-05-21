@@ -60,6 +60,7 @@
 
 // Fullpage Scroll
     var myFullpage = new fullpage('#fullpage', {
+        licenseKey: 'PLACE_KEY_HERE',
         //Navigation
         menu: '.navbar-menu',
         anchors: ['homepage', 'projects', 'about'],
