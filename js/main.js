@@ -108,25 +108,3 @@
 
 // Disable right click
 //$(document).on("contextmenu", function (event) { event.preventDefault(); });
-
-// tab selector
-function selectTab(evt, tech) {
-
-    var i, tabcontent, tablinks;
-
-    tabcontent = document.getElementsByClassName("tab-contents");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    tablinks = document.getElementsByClassName("tab");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tech).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-document.getElementById("defaultOpen").click();

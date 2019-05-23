@@ -818,7 +818,7 @@ html body .fp-tooltip {
 .about .background-block {
   background-color: #5CDB95;
   width: 100%;
-  height: 32vh;
+  height: 30vh;
   z-index: -1;
   position: absolute;
 }
@@ -851,7 +851,7 @@ html body .fp-tooltip {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 25px 0 115px 0;
+  margin: 30px 0 75px 0;
 }
 
 .about .container .about-bio h2 {
@@ -889,13 +889,6 @@ html body .fp-tooltip {
   padding: 0;
 }
 
-.about .container .about-skills .background-block {
-  height: 222px;
-  top: 630px !important;
-  left: -290px;
-  width: 150%;
-}
-
 .about .container .about-skills h3 {
   font-size: 24px;
   margin-bottom: 15px;
@@ -906,34 +899,39 @@ html body .fp-tooltip {
   margin-bottom: 40px;
 }
 
-.about .container .about-skills .skill-tabs {
+.about .container .about-skills .skills {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 80%;
+  width: 70%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-.about .container .about-skills .skill-tabs div:hover {
-  border-bottom: 4px solid #05386B;
-}
-
-.about .container .about-skills .skill-tabs div.active {
-  border-bottom: 4px solid #05386B;
-}
-
-.about .container .about-skills .tab-contents {
-  display: none;
+.about .container .about-skills .skills .skill {
   position: relative;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin: 70px auto 0;
-  width: 65%;
-  height: 175px;
-  margin-bottom: 65px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about .container .about-skills .skills .skill p {
+  display: none;
+  position: absolute;
+  bottom: -80px;
+}
+
+.about .container .about-skills .skills .skill:hover p {
+  display: block;
+}
+
+.about .container .about-skills .skills:first-of-type {
+  margin-bottom: 60px;
 }
