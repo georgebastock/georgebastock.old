@@ -8,6 +8,7 @@
     color: $blue;
     position: relative;
     z-index: 0;
+    overflow: hidden;
 
     &::before {
         content: "";
@@ -29,60 +30,12 @@
         align-items: center;
         height: 100vh;
 
-        .scroll-indicator {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0 8px;
-
-            &.entranceAnimation {
-                animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-            }
-
-            &.hidden {
-                visibility: hidden;
-            }
-
-            span {
-                width: 25px;
-                height: 35px;
-                border: 2px solid $blue;
-                border-radius: 50px;
-                position: relative;
-                transition: transform 1s;
-
-                &:hover {
-                    border-color: $creme;
-                    transform: scale(0.9);
-
-                    &::before {
-                        background-color: $creme;
-                        width: 5px;
-                        height: 5px;
-                        margin-left: -2.5px;
-                    }
-                }
-    
-                &::before {
-                    position: absolute;
-                    top: 5px;
-                    left: 50%;
-                    content: '';
-                    width: 5px;
-                    height: 5px;
-                    margin-left: -2.5px;
-                    background-color: $blue;
-                    border-radius: 100%;
-                    animation: scrollDot 3s infinite;
-                }
-            }
-        } 
-
         .projects-body {
             .projects-summary {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                margin-bottom: 45px;
+                margin-bottom: 35px;
 
                 h2 {
                     display: inline-block;

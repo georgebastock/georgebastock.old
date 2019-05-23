@@ -6,6 +6,7 @@
 .hero {
     background-color: $creme;
     color: $blue;
+    padding-top: 0px !important;
 
     .container {
         position: relative;
@@ -80,5 +81,57 @@
                 }
             }
         }
+
+        .scroll-indicator {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -55px;
+            z-index: 1;
+
+            &.entranceAnimation {
+                animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+            }
+
+            &.hidden {
+                visibility: hidden;
+            }
+
+            span {
+                width: 25px;
+                height: 35px;
+                border: 2px solid $blue;
+                border-radius: 50px;
+                position: relative;
+                transition: transform 1s;
+
+                &:hover {
+                    border-color: $creme;
+                    transform: scale(0.9);
+
+                    &::before {
+                        background-color: $creme;
+                        width: 5px;
+                        height: 5px;
+                        margin-left: -2.5px;
+                    }
+                }
+    
+                &::before {
+                    position: absolute;
+                    top: 5px;
+                    left: 50%;
+                    content: '';
+                    width: 5px;
+                    height: 5px;
+                    margin-left: -2.5px;
+                    background-color: $blue;
+                    border-radius: 100%;
+                    animation: scrollDot 3s infinite;
+                }
+            }
+        } 
     }
 }

@@ -65,12 +65,13 @@
         menu: '.navbar-menu',
         anchors: ['homepage', 'projects', 'about'],
         //Scrolling
+        paddingTop: '69px',
+        bigSectionsDestination: top,
         css3: true,
         scrollingSpeed: 600,
         autoScrolling: true,
-        scrollBar: false,
+        scrollBar: true,
         easing: 'easeInOutCubic',
-        scrollOverflow: true,
         //Accessibility
         keyboardScrolling: true,
         //Custom selectors
