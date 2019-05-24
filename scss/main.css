@@ -208,6 +208,44 @@
   }
 }
 
+@-webkit-keyframes scrollDot {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translate(0, 15px);
+            transform: translate(0, 15px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scrollDot {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translate(0, 15px);
+            transform: translate(0, 15px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -219,6 +257,10 @@ html body {
   letter-spacing: 0.025em;
   line-height: 1.65;
   font-size: 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 html body a {
@@ -769,44 +811,6 @@ html body .fp-tooltip {
           animation: blurSlideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) 1.7s both;
 }
 
-@-webkit-keyframes scrollDot {
-  0% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  80% {
-    -webkit-transform: translate(0, 15px);
-            transform: translate(0, 15px);
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes scrollDot {
-  0% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  80% {
-    -webkit-transform: translate(0, 15px);
-            transform: translate(0, 15px);
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .about {
   background-color: #EDF5E1;
   color: #05386B;
@@ -818,7 +822,7 @@ html body .fp-tooltip {
 .about .background-block {
   background-color: #5CDB95;
   width: 100%;
-  height: 30vh;
+  height: 32vh;
   z-index: -1;
   position: absolute;
 }
@@ -851,7 +855,8 @@ html body .fp-tooltip {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 30px 0 75px 0;
+  margin: 30px 0 100px 0;
+  position: relative;
 }
 
 .about .container .about-bio h2 {
@@ -868,10 +873,38 @@ html body .fp-tooltip {
 
 .about .container .about-bio p {
   font-size: 20px;
+  width: 80%;
+}
+
+.about .container .about-bio p.entranceAnimation {
+  -webkit-animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.8s both;
+          animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.8s both;
 }
 
 .about .container .about-bio p:first-of-type {
   margin-bottom: 10px;
+}
+
+.about .container .about-bio p:first-of-type.entranceAnimation {
+  -webkit-animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.6s both;
+          animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.6s both;
+}
+
+.about .container .about-bio .bio-image {
+  position: absolute;
+  right: 50px;
+  bottom: -15px;
+  width: 12%;
+}
+
+.about .container .about-bio .bio-image.hoverAnimation {
+  -webkit-animation: wobble 0.8s both;
+          animation: wobble 0.8s both;
+}
+
+.about .container .about-bio .bio-image.entranceAnimation {
+  -webkit-animation: blurSlideDown 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.8s both;
+          animation: blurSlideDown 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.8s both;
 }
 
 .about .container .about-skills {
@@ -894,9 +927,24 @@ html body .fp-tooltip {
   margin-bottom: 15px;
 }
 
+.about .container .about-skills h3.entranceAnimation {
+  -webkit-animation: blurSlideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.9s both;
+          animation: blurSlideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.9s both;
+}
+
 .about .container .about-skills p {
   font-size: 20px;
   margin-bottom: 40px;
+}
+
+.about .container .about-skills p.entranceAnimation {
+  -webkit-animation: blurSlideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) 1.6s both;
+          animation: blurSlideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) 1.6s both;
+}
+
+.about .container .about-skills p:first-of-type.entranceAnimation {
+  -webkit-animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) 1s both;
+          animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) 1s both;
 }
 
 .about .container .about-skills .skills {
@@ -907,13 +955,12 @@ html body .fp-tooltip {
       -ms-flex-align: center;
           align-items: center;
   width: 70%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .about .container .about-skills .skills .skill {
-  position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -922,16 +969,140 @@ html body .fp-tooltip {
   display: flex;
 }
 
-.about .container .about-skills .skills .skill p {
-  display: none;
-  position: absolute;
-  bottom: -80px;
+.about .container .about-skills .skills .skill.entranceAnimation {
+  -webkit-animation: blurSlideLeft 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: blurSlideLeft 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
-.about .container .about-skills .skills .skill:hover p {
-  display: block;
+.about .container .about-skills .skills .skill.entranceAnimation:nth-child(1) {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
+}
+
+.about .container .about-skills .skills .skill.entranceAnimation:nth-child(2) {
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
+}
+
+.about .container .about-skills .skills .skill.entranceAnimation:nth-child(3) {
+  -webkit-animation-delay: 1300ms;
+          animation-delay: 1300ms;
+}
+
+.about .container .about-skills .skills .skill.entranceAnimation:nth-child(4) {
+  -webkit-animation-delay: 1350ms;
+          animation-delay: 1350ms;
+}
+
+.about .container .about-skills .skills .skill.entranceAnimation:nth-child(5) {
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
+}
+
+.about .container .about-skills .skills .skill.entranceAnimation:nth-child(6) {
+  -webkit-animation-delay: 1450ms;
+          animation-delay: 1450ms;
+}
+
+.about .container .about-skills .skills .skill i {
+  font-size: 105px;
+  -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+.about .container .about-skills .skills .skill .skill-name {
+  opacity: 0;
+  position: absolute;
+  bottom: -30px;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  font-weight: bold;
+  color: #5CDB95;
+}
+
+.about .container .about-skills .skills .skill:hover i {
+  color: #5CDB95;
+}
+
+.about .container .about-skills .skills .skill:hover .skill-name {
+  opacity: 1;
 }
 
 .about .container .about-skills .skills:first-of-type {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+}
+
+.about .container .about-skills .skills.bottom-row.skills .entranceAnimation {
+  -webkit-animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: blurSlideRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.about .container .about-skills .skills.bottom-row.skills .entranceAnimation:nth-child(1) {
+  -webkit-animation-delay: 1750ms;
+          animation-delay: 1750ms;
+}
+
+.about .container .about-skills .skills.bottom-row.skills .entranceAnimation:nth-child(2) {
+  -webkit-animation-delay: 1650ms;
+          animation-delay: 1650ms;
+}
+
+@-webkit-keyframes wobble {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+            transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+            transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+            transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+            transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+            transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+            transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+            transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+            transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+            transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+            transform: translateX(-6px) rotate(-1.2deg);
+  }
 }

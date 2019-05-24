@@ -77,3 +77,20 @@
         filter: blur(0);
     }
 }
+
+@keyframes scrollDot {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    80% {
+        transform: translate(0, 15px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}

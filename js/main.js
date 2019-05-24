@@ -58,6 +58,15 @@
         $(this).removeClass("hoverAnimation");
     })
 
+    $(".bio-image").mouseenter(function() {
+        $(this).removeClass("entranceAnimation");
+        $(this).addClass("hoverAnimation");
+    });
+
+    $(".bio-image").bind("webkitAnimationEnd mozAnimationEnd animationEnd", function(){
+        $(this).removeClass("hoverAnimation");
+    })
+
 // Fullpage Scroll
     var myFullpage = new fullpage('#fullpage', {
         licenseKey: 'PLACE_KEY_HERE',
@@ -80,7 +89,10 @@
         onLeave: function(origin, destination, direction){
             if (destination.index == 1){
                 $('.projects-summary h2 ,.projects-summary h3 ,.project-panel ,.projects-button').addClass('entranceAnimation');
+            } else if (destination.index == 2){
+                $('.about-bio h2 ,.about-bio p ,.bio-image ,.about-skills h3 ,.about-skills p ,.skills .skill').addClass('entranceAnimation');
             }
+            
             if (destination.index != 0) {
                 $('#navbar').addClass('small');
                 $('.scroll-indicator').addClass('hidden');

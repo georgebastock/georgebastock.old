@@ -13,7 +13,7 @@
     .background-block {
         background-color: $lightGreen;
         width: 100%;
-        height: 30vh;
+        height: 32vh;
         z-index: -1;
         position: absolute;
     }
@@ -31,7 +31,8 @@
             display: flex;
             align-items: flex-start;
             flex-direction: column;
-            margin: 30px 0 75px 0;
+            margin: 30px 0 100px 0;
+            position: relative;
 
             h2 {
                 display: inline-block;
@@ -46,9 +47,33 @@
 
             p {
                 font-size: 20px;
+                width: 80%;
 
+                &.entranceAnimation {
+                    animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.8s both;
+                }
+                
                 &:first-of-type {
                     margin-bottom: 10px;
+
+                    &.entranceAnimation {
+                        animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.6s both;
+                    }
+                }
+            }
+
+            .bio-image {
+                position: absolute;
+                right: 50px;
+                bottom: -15px;
+                width: 12%;
+
+                &.hoverAnimation {
+                    animation: wobble 0.8s both;
+                }
+
+                &.entranceAnimation {
+                    animation: blurSlideDown 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.8s both;
                 }
             }
         }
@@ -63,41 +88,134 @@
             h3 {
                 font-size: 24px;
                 margin-bottom: 15px;
+
+                &.entranceAnimation {
+                    animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.9s both;
+                }
             }
 
             p {
                 font-size: 20px;
                 margin-bottom: 40px;
+
+                &.entranceAnimation {
+                    animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.6s both;
+                }
+
+                &:first-of-type {
+                    &.entranceAnimation {
+                        animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+                    }
+                }
             }
 
             .skills {
                 display: flex;
                 align-items: center;
                 width: 70%;
-                justify-content: space-between;
+                justify-content: space-evenly;
 
                 .skill {
-                    position: relative;
                     justify-content: center;
                     display: flex;
 
-                    p {
-                        display: none;
+                    &.entranceAnimation {
+                        animation: blurSlideLeft 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+
+                        &:nth-child(1) { 
+                            animation-delay: 1200ms 
+                        }
+    
+                        &:nth-child(2) { 
+                            animation-delay: 1250ms 
+                        }
+    
+                        &:nth-child(3) { 
+                            animation-delay: 1300ms 
+                        }
+    
+                        &:nth-child(4) { 
+                            animation-delay: 1350ms 
+                        }
+    
+                        &:nth-child(5) { 
+                            animation-delay: 1400ms
+                        }
+
+                        &:nth-child(6) { 
+                            animation-delay: 1450ms
+                        }
+                    }
+
+                    i {
+                        font-size: 105px;  
+                        transition: color 1s;
+                    }
+
+                    .skill-name {
+                        opacity: 0;
                         position: absolute;
-                        bottom: -80px;
+                        bottom: -30px;
+                        transition: opacity 0.5s;
+                        font-weight: bold;
+                        color: $lightGreen;
                     }
 
                     &:hover {
-                        p {
-                            display: block;
+
+                        i {
+                            color: $lightGreen;
+                        }
+
+                        .skill-name {
+                            opacity: 1;
                         }
                     }
                 }
 
                 &:first-of-type {
-                    margin-bottom: 60px;
+                    margin-bottom: 40px;
+                }
+
+                &.bottom-row {
+                    &.skills .entranceAnimation {
+                        animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+
+                        &:nth-child(1) { 
+                            animation-delay: 1750ms 
+                        }
+    
+                        &:nth-child(2) { 
+                            animation-delay: 1650ms 
+                        }
+                    }
                 }
             }
         }
     }
 }
+
+// KEYFRAME
+
+@keyframes wobble {
+    0%,
+    100% {
+      transform: translateX(0%);
+      transform-origin: 50% 50%;
+    }
+    15% {
+      transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+      transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+      transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+      transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+      transform: translateX(-6px) rotate(-1.2deg);
+    }
+  }
