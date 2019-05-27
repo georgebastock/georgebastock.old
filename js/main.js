@@ -72,7 +72,7 @@
         licenseKey: 'PLACE_KEY_HERE',
         //Navigation
         menu: '.navbar-menu',
-        anchors: ['homepage', 'projects', 'about'],
+        anchors: ['homepage', 'projects', 'about', 'contact'],
         //Scrolling
         paddingTop: '69px',
         bigSectionsDestination: top,
@@ -105,7 +105,7 @@
 
 // Initial homepage animations
     $('.navbar .container ,.scroll-indicator').addClass('entranceAnimation');
-    $('.hero-body h1 ,.line-break ,.hero-body h2 ,.action-button').addClass('entranceAnimation');
+    $('.hero-body h1 ,.line-break ,.hero-body h2 ,.action-button ,.typed-container').addClass('entranceAnimation');
 
 // Button coming soon click
     $('#projects-button').click(function(){
@@ -117,6 +117,61 @@
             $this.text('View More...');
         }
     });
+
+// Google Maps
+    var selector_map = $('#map');
+    var draggable = selector_map.attr('data-draggable');
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 52.6309, lng: 1.2974},
+        zoom: 14,
+        disableDefaultUI: true,
+        scrollwheel: false,
+        zoomControl: false,  
+        disableDoubleClickZoom: true,
+        navigationControl: true,
+        mapTypeControl: false,
+        scaleControl: false,
+        draggable: draggable
+    });
+
+// Form
+    (function ($) {
+        'use strict';
+        var form = $('.contact-form'),
+            message = $('.form-message'),
+            form_data;
+        // Success function
+        function done_func(response) {
+            message.fadeIn().removeClass('alert-danger').addClass('alert-success');
+            message.text(response);
+            setTimeout(function () {
+                message.fadeOut();
+            }, 2000);
+            form.find('input:not([type="submit"]), textarea').val('');
+        }
+        // fail function
+        function fail_func(data) {
+            message.fadeIn().removeClass('alert-success').addClass('alert-success');
+            message.text(data.responseText);
+            setTimeout(function () {
+                message.fadeOut();
+            }, 2000);
+        }
+        
+        form.submit(function (e) {
+            e.preventDefault();
+            form_data = $(this).serialize();
+            $.ajax({
+                type: 'POST',
+                url: form.attr('action'),
+                data: form_data
+            })
+            .done(done_func)
+            .fail(fail_func);
+        });
+        
+    })(jQuery);
 
 // Disable right click
 //$(document).on("contextmenu", function (event) { event.preventDefault(); });

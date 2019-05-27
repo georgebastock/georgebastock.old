@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------------------------
+// This file contains:
+//                      scss file with all styles connecting to the contact section of the site.
+// -----------------------------------------------------------------------------------------------
+
+.contact {
+    position: relative;
+    overflow: hidden;
+    background-color: $creme;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 0;
+        height: calc(100% - 69px);
+        width: 100%;
+        top: 69px;
+        left: 0;
+        background: rgba(5,56,107,0.6);
+        pointer-events: none;
+    }
+
+    #map {
+        height: 100%;
+    }
+
+    .contact-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        height: calc(100% - 69px);
+        top: 69px;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .contact-panel {
+            width: 800px;
+            background: $creme;
+            border-radius: 10px;
+            padding: 72px 150px 25px 150px;
+            box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
