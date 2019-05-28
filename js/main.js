@@ -142,6 +142,7 @@
     $('#gform').on('submit', function(e) {
         $('#gform').prepend('Your submission has been processed...');
         document.getElementById("gform").reset();
+        console.clear();
     });
 
 // Disable right click
