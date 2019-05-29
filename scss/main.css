@@ -1135,12 +1135,13 @@ html body .fp-tooltip {
   width: 100%;
   top: 69px;
   left: 0;
-  background: rgba(5, 56, 107, 0.6);
+  background: rgba(5, 56, 107, 0.75);
   pointer-events: none;
 }
 
 .contact #map {
   height: 100%;
+  cursor: pointer !important;
 }
 
 .contact .contact-container {
@@ -1160,6 +1161,7 @@ html body .fp-tooltip {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  pointer-events: none;
 }
 
 .contact .contact-container .contact-panel {
@@ -1169,6 +1171,7 @@ html body .fp-tooltip {
   padding: 72px 150px 25px 150px;
   -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  pointer-events: all;
 }
 
 .footer {
@@ -1209,7 +1212,7 @@ html body .fp-tooltip {
   padding: 0;
 }
 
-.footer .container .footer-social .social-list li {
+.footer .container .footer-social .social-list .outer-social {
   display: inline-block;
   border-radius: 5px;
   border: 2px solid #05386B;
@@ -1219,7 +1222,7 @@ html body .fp-tooltip {
   cursor: pointer;
 }
 
-.footer .container .footer-social .social-list li:hover {
+.footer .container .footer-social .social-list .outer-social:hover {
   color: #EDF5E1;
   border-color: #EDF5E1;
 }
@@ -1284,4 +1287,3 @@ html body .fp-tooltip {
   -webkit-transform-origin: 0 50%;
           transform-origin: 0 50%;
 }
-/*# sourceMappingURL=main.css.map */

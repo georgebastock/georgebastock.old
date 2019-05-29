@@ -68,11 +68,13 @@
     })
 
 // Fullpage Scroll
+    var loadFromTop = true;
+
     var myFullpage = new fullpage('#fullpage', {
         licenseKey: 'PLACE_KEY_HERE',
         //Navigation
         menu: '.navbar-menu',
-        anchors: ['homepage', 'projects', 'about', 'contact'],
+        anchors: ['homepage', 'projects', 'about', 'contact', 'footer'],
         //Scrolling
         paddingTop: '69px',
         bigSectionsDestination: top,
@@ -85,14 +87,19 @@
         keyboardScrolling: true,
         //Custom selectors
         lazyLoading: true,
-        //events
+        //Events
         onLeave: function(origin, destination, direction){
-            if (destination.index == 1){
+            if (destination.index == 0) {
+                $('.navbar .container ,.scroll-indicator').addClass('entranceAnimation');
+                $('.hero-body h1 ,.line-break ,.hero-body h2 ,.action-button ,.typed-container').addClass('entranceAnimation');
+            } else if (destination.index == 1){
                 $('.projects-summary h2 ,.projects-summary h3 ,.project-panel ,.projects-button').addClass('entranceAnimation');
             } else if (destination.index == 2){
                 $('.about-bio h2 ,.about-bio p ,.bio-image ,.about-skills h3 ,.about-skills p ,.skills .skill').addClass('entranceAnimation');
+            } else if (destination.index == 4) {
+                $('.footer-text p ,.bookmark ,.outer-social').addClass('entranceAnimation');
             }
-            
+            // Responsive header
             if (destination.index != 0) {
                 $('#navbar').addClass('small');
                 $('.scroll-indicator').addClass('hidden');
@@ -101,11 +108,14 @@
                 $('.scroll-indicator').removeClass('hidden');
             }
         },
+        afterLoad: function(origin, destination, direction){
+            if (destination.index == 0) {
+                $('.navbar .container ,.scroll-indicator').addClass('entranceAnimation');
+                $('.hero-body h1 ,.line-break ,.hero-body h2 ,.action-button ,.typed-container').addClass('entranceAnimation');
+                loadFromTop = false;
+            }
+        }
     });
-
-// Initial homepage animations
-    $('.navbar .container ,.scroll-indicator').addClass('entranceAnimation');
-    $('.hero-body h1 ,.line-break ,.hero-body h2 ,.action-button ,.typed-container').addClass('entranceAnimation');
 
 // Button coming soon click
     $('#projects-button').click(function(){
@@ -135,14 +145,16 @@
         draggable: draggable
     });
 
+    map.setOptions({draggableCursor:'default'});
+
 // Form
-
-    var submitted=false;
-
-    $('#gform').on('submit', function(e) {
+    $('#gform').on('submit', function() {
         $('#gform').prepend('Your submission has been processed...');
-        document.getElementById("gform").reset();
-        console.clear();
+        submitted = true;
+        setTimeout( function(){ 
+            console.clear();
+            console.log("Form sent");
+        }  , 2000 );
     });
 
 // Disable right click
