@@ -96,6 +96,8 @@
                 $('.projects-summary h2 ,.projects-summary h3 ,.project-panel ,.projects-button').addClass('entranceAnimation');
             } else if (destination.index == 2){
                 $('.about-bio h2 ,.about-bio p ,.bio-image ,.about-skills h3 ,.about-skills p ,.skills .skill').addClass('entranceAnimation');
+            } else if (destination.index == 3) {
+                $('.contact-panel ,.contact-panel h2 ,.contact-panel p ,.form-group ,.contact-button').addClass('entranceAnimation');
             } else if (destination.index == 4) {
                 $('.footer-text p ,.bookmark ,.outer-social').addClass('entranceAnimation');
             }
@@ -145,16 +147,14 @@
         draggable: draggable
     });
 
-    map.setOptions({draggableCursor:'default'});
+    map.setOptions({
+        draggableCursor:'default'
+    });
 
 // Form
-    $('#gform').on('submit', function() {
-        $('#gform').prepend('Your submission has been processed...');
-        submitted = true;
-        setTimeout( function(){ 
-            console.clear();
-            console.log("Form sent");
-        }  , 2000 );
+    $('#contact-form').on('submit', function() {
+        $('#contact-form').trigger("reset");
+        $(".green").css("display", "block");
     });
 
 // Disable right click
