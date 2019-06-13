@@ -126,3 +126,14 @@
         }
     }
 }
+
+// -- Small Mobile Mode -- //
+@media only screen and (max-width: 460px) {
+    .navbar {
+        font-size: 14px;
+
+        .container .navbar-menu .navbar-item {
+            margin: 0px 3px;
+        }
+    }
+}

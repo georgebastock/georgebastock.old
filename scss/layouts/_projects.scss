@@ -190,6 +190,12 @@
         .projects-body {
             margin-top: 20px;
         }
+
+        .projects-grid .project-panel{
+            &::before {
+                height: 94%;
+            }
+        }
     }
 }
 
@@ -201,6 +207,17 @@
         .project-image {
             min-height: 257px;
         }
+
+        .projects-grid .project-panel{
+            &::before {
+                height: 92%;
+                width: 97%;
+            }
+
+            &:nth-last-child(-n+3) {
+                margin-top: 0;
+            }
+        }
     }
 }
 
@@ -211,6 +228,10 @@
 
         .projects-grid .project-panel {
             width: 34%;
+
+            &::before {
+                height: 91%;
+            }
         }
         
         .projects-button {
@@ -227,7 +248,7 @@
 // -- Mobile Mode -- //
 @media only screen and (max-width: 768px) {
     .projects {
-        padding-top: 103px !important; 
+        padding-top: 103 !important; 
 
         .container {
             width: 85%;
@@ -247,7 +268,7 @@
             }
 
             .projects-body {
-                margin-top: 35px;
+                margin-top: 40px;
 
                 .projects-summary {
                     margin-bottom: 20px;

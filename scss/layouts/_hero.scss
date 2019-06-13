@@ -178,11 +178,38 @@
 
 // -- Mobile Mode -- //
 @media only screen and (max-width: 768px) {
-    .hero .container .hero-body h1 {
-        font-size: 48px;
+    .hero .container .hero-body {
+        margin-top: 45px;
     }
 
     .letter:nth-last-child(12) {
         display: block;
     } 
+}
+
+// -- Small Mobile Mode -- //
+@media only screen and (max-width: 460px) {
+    .hero .container .hero-body {
+        h1 {
+            font-size: 28px;
+        }
+
+        h2, .typed-container, .button {
+            font-size: 10px;
+        }
+
+        .line-break {
+            margin: 20px auto;
+        }
+
+        .action-buttons {
+            .button {
+                padding: 15px 15px;
+            }
+            
+            .button:nth-last-of-type(1) {
+                margin-left: 15px;
+            }
+        }
+    }
 }

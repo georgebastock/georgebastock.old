@@ -481,6 +481,15 @@ h2 {
   }
 }
 
+@media only screen and (max-width: 460px) {
+  .navbar {
+    font-size: 14px;
+  }
+  .navbar .container .navbar-menu .navbar-item {
+    margin: 0px 3px;
+  }
+}
+
 .hero {
   background-color: #EDF5E1;
   color: #05386B;
@@ -666,11 +675,29 @@ h2 {
 }
 
 @media only screen and (max-width: 768px) {
-  .hero .container .hero-body h1 {
-    font-size: 48px;
+  .hero .container .hero-body {
+    margin-top: 45px;
   }
   .letter:nth-last-child(12) {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .hero .container .hero-body h1 {
+    font-size: 28px;
+  }
+  .hero .container .hero-body h2, .hero .container .hero-body .typed-container, .hero .container .hero-body .button {
+    font-size: 10px;
+  }
+  .hero .container .hero-body .line-break {
+    margin: 20px auto;
+  }
+  .hero .container .hero-body .action-buttons .button {
+    padding: 15px 15px;
+  }
+  .hero .container .hero-body .action-buttons .button:nth-last-of-type(1) {
+    margin-left: 15px;
   }
 }
 
@@ -889,6 +916,9 @@ h2 {
   .projects .container .projects-body {
     margin-top: 20px;
   }
+  .projects .container .projects-grid .project-panel::before {
+    height: 94%;
+  }
 }
 
 @media only screen and (max-width: 1260px) {
@@ -898,6 +928,13 @@ h2 {
   .projects .container .project-image {
     min-height: 257px;
   }
+  .projects .container .projects-grid .project-panel::before {
+    height: 92%;
+    width: 97%;
+  }
+  .projects .container .projects-grid .project-panel:nth-last-child(-n+3) {
+    margin-top: 0;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -906,6 +943,9 @@ h2 {
   }
   .projects .container .projects-grid .project-panel {
     width: 34%;
+  }
+  .projects .container .projects-grid .project-panel::before {
+    height: 91%;
   }
   .projects .container .projects-button {
     margin-top: 20px;
@@ -918,7 +958,7 @@ h2 {
 
 @media only screen and (max-width: 768px) {
   .projects {
-    padding-top: 103px !important;
+    padding-top: 103 !important;
   }
   .projects .container {
     width: 85%;
@@ -935,7 +975,7 @@ h2 {
     max-height: 175px;
   }
   .projects .container .projects-body {
-    margin-top: 35px;
+    margin-top: 40px;
   }
   .projects .container .projects-body .projects-summary {
     margin-bottom: 20px;
