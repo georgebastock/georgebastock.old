@@ -82,6 +82,7 @@
             autoScrolling: true,
             scrollBar: true,
             easing: 'easeInOutCubic',
+            responsiveWidth: 768,
             //Accessibility
             keyboardScrolling: true,
             //Custom selectors
