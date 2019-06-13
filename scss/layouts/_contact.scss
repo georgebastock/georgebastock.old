@@ -154,3 +154,30 @@
         }
     }
 }
+
+// -- Media Queries -- //
+
+// -- Tablet Mode -- //
+@media only screen and (max-width: 992px) {
+    .contact .contact-container .contact-panel {
+        width: 700px;
+
+        .form-group textarea {
+            max-width: 480px !important;
+            min-width: 480px !important;
+        }
+    }
+}
+
+// -- Mobile Mode -- //
+@media only screen and (max-width: 768px) {
+    .contact .contact-container .contact-panel {
+        width: 80%;
+        padding: 40px 30px;
+
+        .form-group textarea {
+            max-width: 100% !important;
+            min-width: 100% !important;
+        }
+    }
+}
