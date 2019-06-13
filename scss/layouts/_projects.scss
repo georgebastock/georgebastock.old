@@ -23,7 +23,7 @@
 
     .container {
         margin: 0 auto;
-        width: 70%;
+        width: 1333px;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -175,6 +175,87 @@
 
             &.entranceAnimation {
                 animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.7s both;
+            }
+        }
+    }
+}
+
+// -- Media Queries -- //
+
+// -- Custom container width -- //
+@media only screen and (max-width: 1345px) {
+    .projects .container {
+        width: 1200px;
+
+        .projects-body {
+            margin-top: 20px;
+        }
+    }
+}
+
+// -- Small Desktop Mode -- //
+@media only screen and (max-width: 1260px) {
+    .projects .container {
+        width: 95%;
+
+        .project-image {
+            min-height: 257px;
+        }
+    }
+}
+
+// -- Tablet Mode -- //
+@media only screen and (max-width: 992px) {
+    .projects .container {
+        width: 95%;
+
+        .projects-grid .project-panel {
+            width: 34%;
+        }
+        
+        .projects-button {
+            margin-top: 20px;
+        }
+
+        .project-image {
+            min-height: unset;
+            max-height: 178px;
+        }
+    }
+}
+
+// -- Mobile Mode -- //
+@media only screen and (max-width: 768px) {
+    .projects {
+        padding-top: 103px !important; 
+
+        .container {
+            width: 85%;
+
+            .project-image {
+                min-height: unset;
+                max-height: unset;
+            }
+
+            .projects-grid .project-panel {
+                width: 48%;
+            }
+
+            .project-image {
+                min-height: 155px;
+                max-height: 175px;
+            }
+
+            .projects-body {
+                margin-top: 35px;
+
+                .projects-summary {
+                    margin-bottom: 20px;
+    
+                    h3 {
+                        font-size: 18px;
+                    }
+                }
             }
         }
     }

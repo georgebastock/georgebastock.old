@@ -95,3 +95,34 @@
         }
     }
 }
+
+// -- Media Queries -- //
+
+// -- Small Desktop Mode -- //
+@media only screen and (max-width: 1260px) {
+    .navbar { 
+        font-size: 22px;
+    }
+}
+
+// -- Tablet Mode -- //
+@media only screen and (max-width: 992px) {
+    .navbar { 
+        font-size: 18px;
+    }
+}
+
+// -- Mobile Mode -- //
+@media only screen and (max-width: 768px) {
+    .navbar { 
+        padding: 15px 0;
+
+        .container {
+            flex-direction: column;
+
+            .navbar-brand {
+                margin: 0 0 15px 0;
+            }
+        }
+    }
+}
