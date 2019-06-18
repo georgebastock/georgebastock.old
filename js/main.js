@@ -104,10 +104,8 @@
                 // Responsive header
                 if (destination.index != 0) {
                     $('#navbar').addClass('small');
-                    // $('.scroll-indicator').addClass('hidden');
                 } else {
                     $('#navbar').removeClass('small');
-                    // $('.scroll-indicator').removeClass('hidden');
                 }
             },
             afterLoad: function(origin, destination, direction){
