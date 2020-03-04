@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------------------------
 // This file contains:
-//                      scss file with all styles connecting to the main header including the
+//                      scss file with all styles connecting to the main navbar including the
 //                      navigation menu and brand icon.
 // -----------------------------------------------------------------------------------------------
 
@@ -8,13 +8,23 @@
     background-color: $lightGreen;
     color: $blue;
     font-size: 26px;
-    text-transform: uppercase; 
     font-weight: bold;
-    padding: 20px 0;
+    padding: 30px 0;
     position: fixed;
     z-index: 99; 
     width: 100%;
-    transition: font-size .2s;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    transform: scaleY(1);
+    transform-origin:top;
+
+    &.nav-scroll {
+        box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
+        padding: 15px 0;
+    }
+
+    &.nav-up {
+        transform: scaleY(0);
+    }
 
     &.small {
         font-size: 18px;
@@ -29,17 +39,16 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-
-        &.entranceAnimation {
-            animation: blurSlideDown 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-        }
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: -20px;
+        align-items: baseline;
 
         .navbar-brand {
-            margin-right: auto;
+            text-transform: uppercase; 
+            margin-top: 20px;
 
             &:hover {
-                color: $creme;
-    
                 .inverted {
                     background-color: $creme;
                 }
@@ -57,18 +66,34 @@
             list-style-type: none;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 10px;
     
             .navbar-item {
                 display: inline-block;
                 position: relative;
                 margin: 0px 10px;
 
+                .list-number {
+                    color: $creme;
+                    font-size: 1rem;
+                    margin-right: 4px;
+                }
+
+                a {
+                    display: flex;
+                    align-items: baseline;
+                }
+
                 &::after {
                     content: '';
                     position: absolute;
-                    bottom: 0;
+                    bottom: 15px;
+                    left: 0;
                     width: 100%;
-                    border-bottom: solid 4px $creme;  
+                    border-bottom: solid 4px $blue;  
                     transform: scaleX(0);  
                     transition: transform 0.25s ease-in-out;
                     transform-origin: 100% 50%;
@@ -98,31 +123,18 @@
 
 // -- Media Queries -- //
 
-// -- Small Desktop Mode -- //
-@media only screen and (max-width: 1260px) {
-    .navbar { 
-        font-size: 22px;
-    }
-}
-
-// -- Tablet Mode -- //
-@media only screen and (max-width: 992px) {
-    .navbar { 
-        font-size: 18px;
-    }
-}
-
 // -- Mobile Mode -- //
 @media only screen and (max-width: 768px) {
-    .navbar { 
-        padding: 15px 0;
+    .navbar {
+        padding: 30px 0 22px;
+
+        &.nav-scroll {
+            box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
+            padding: 15px 0 7px;
+        }
 
         .container {
-            flex-direction: column;
-
-            .navbar-brand {
-                margin: 0 0 15px 0;
-            }
+            justify-content: space-evenly;
         }
     }
 }

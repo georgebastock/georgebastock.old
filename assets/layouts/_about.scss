@@ -39,26 +39,14 @@
                 padding-bottom: 2px;
                 border-bottom: 4px solid $blue;
                 margin-bottom: 15px;
-
-                &.entranceAnimation {
-                    animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.5s both;
-                }
             }
 
             p {
                 font-size: 20px;
                 width: 80%;
-
-                &.entranceAnimation {
-                    animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.8s both;
-                }
                 
                 &:first-of-type {
                     margin-bottom: 10px;
-
-                    &.entranceAnimation {
-                        animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.6s both;
-                    }
                 }
             }
 
@@ -70,10 +58,6 @@
 
                 &.hoverAnimation {
                     animation: wobble 0.8s both;
-                }
-
-                &.entranceAnimation {
-                    animation: blurSlideDown 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.8s both;
                 }
             }
         }
@@ -88,25 +72,11 @@
             h3 {
                 font-size: 24px;
                 margin-bottom: 15px;
-
-                &.entranceAnimation {
-                    animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.9s both;
-                }
             }
 
             p {
                 font-size: 20px;
                 margin-bottom: 40px;
-
-                &.entranceAnimation {
-                    animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.6s both;
-                }
-
-                &:first-of-type {
-                    &.entranceAnimation {
-                        animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
-                    }
-                }
             }
 
             .skills {
@@ -118,34 +88,6 @@
                 .skill {
                     justify-content: center;
                     display: flex;
-
-                    &.entranceAnimation {
-                        animation: blurSlideLeft 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-
-                        &:nth-child(1) { 
-                            animation-delay: 1200ms 
-                        }
-    
-                        &:nth-child(2) { 
-                            animation-delay: 1250ms 
-                        }
-    
-                        &:nth-child(3) { 
-                            animation-delay: 1300ms 
-                        }
-    
-                        &:nth-child(4) { 
-                            animation-delay: 1350ms 
-                        }
-    
-                        &:nth-child(5) { 
-                            animation-delay: 1400ms
-                        }
-
-                        &:nth-child(6) { 
-                            animation-delay: 1450ms
-                        }
-                    }
 
                     i {
                         font-size: 105px;  
@@ -175,20 +117,6 @@
 
                 &:first-of-type {
                     margin-bottom: 40px;
-                }
-
-                &.bottom-row {
-                    &.skills .entranceAnimation {
-                        animation: blurSlideRight 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-
-                        &:nth-child(1) { 
-                            animation-delay: 1750ms 
-                        }
-    
-                        &:nth-child(2) { 
-                            animation-delay: 1650ms 
-                        }
-                    }
                 }
             }
         }
