@@ -37,20 +37,13 @@
                     font-size: 24px;
                     margin: 0 12px;
                     cursor: pointer;
+                    transition: all 0.2s;
 
-                    &.entranceAnimation {
-                        animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-
-                        &:nth-child(1) { 
-                            animation-delay: 0.9s;
-                        }
-    
-                        &:nth-child(2) { 
-                            animation-delay: 1s;
-                        }
-    
-                        &:nth-child(3) { 
-                            animation-delay: 1.1s;
+                    a {
+                        &:focus {
+                            color: $creme;
+                            border-color: $creme;
+                            outline: none                                   ;
                         }
                     }
 
@@ -67,12 +60,6 @@
             flex-direction: column;
             align-items: center;
 
-            p {
-                &.entranceAnimation {
-                    animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.4s both;
-                }
-            }
-
             i {
                 color: red;
                 margin: 0 5px;
@@ -85,10 +72,6 @@
             .bookmark {
                 font-size: 12px;
                 margin-top: 10px;
-
-                &.entranceAnimation {
-                    animation: blurSlideUp 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.6s both;
-                }
 
                 a {
                     display: inline-block;

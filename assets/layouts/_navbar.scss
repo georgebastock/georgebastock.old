@@ -67,7 +67,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
             flex-wrap: wrap;
             margin-top: 10px;
     
@@ -135,10 +135,6 @@
     .navbar {
         &.nav-scroll {
             padding: 15px 0 7px;
-        }
-
-        .container {
-            justify-content: space-evenly;
         }
     }
 }

@@ -48,6 +48,7 @@
             padding: 40px 110px;
             box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
             pointer-events: all;
+            transition: all 2s;
 
             iframe {
                 body {
@@ -92,6 +93,15 @@
                     font-size: 18px;
                     font-weight: 600;
 
+                    &.input:-webkit-autofill {
+                        -webkit-text-fill-color: $lightGreen !important;
+                        -webkit-box-shadow: 0 0 0px 1000px $creme inset;
+                    }
+
+                    &:focus {
+                        outline:none;
+                    }
+
                     &::placeholder {
                         color: $blue;
                     }
@@ -124,6 +134,7 @@
                 margin-bottom: 20px;
                 font-weight: bold;
                 display: none;
+                padding-left: 20px;
             }
 
             .contact-button {
@@ -131,9 +142,14 @@
                 border: none;
                 margin: 0 auto;
                 display: block;
+                transition: width 2s;
                 
                 &:hover {
                     color: $creme;
+                }
+
+                &:focus {
+                    outline:none;
                 }
             }
         }
@@ -163,6 +179,11 @@
         .form-group textarea {
             max-width: 100% !important;
             min-width: 100% !important;
+        }
+
+        .form-group .fa-exclamation-triangle {
+            right: 17px;
+            left: unset;
         }
     }
 }

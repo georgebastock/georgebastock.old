@@ -4,8 +4,10 @@
 //                      to the user.
 // -----------------------------------------------------------------------------------------------
 
+
+loader();
+
 $(window).on('load', function () {
-    loader();
     setTimeout(function() {
         if ($(".pre-loader").length > 0)
         {
