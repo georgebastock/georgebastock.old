@@ -123,13 +123,17 @@
 
 // -- Media Queries -- //
 
+// -- Small Desktop Mode -- //
+@media only screen and (max-width: 948px) {
+    .navbar {
+        padding: 30px 0 18px;
+    }
+}
+
 // -- Mobile Mode -- //
 @media only screen and (max-width: 768px) {
     .navbar {
-        padding: 30px 0 22px;
-
         &.nav-scroll {
-            box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
             padding: 15px 0 7px;
         }
 

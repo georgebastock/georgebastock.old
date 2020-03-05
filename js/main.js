@@ -14,7 +14,7 @@ $(window).on('load', function () {
     }, 1000);
 });
 
-function loader(_success) {
+function loader() {
     inner = document.querySelector('.pre-loader-percentage');
     bar = $('.block');
     bar.addClass("loading");
@@ -25,9 +25,6 @@ function loader(_success) {
             if (w > 99){
                 inner.textContent = '100%';
                 clearInterval(t);
-                if (_success){
-                    return _success();
-                }
             }
         }, 20);
 }
