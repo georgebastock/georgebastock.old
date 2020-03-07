@@ -15,7 +15,7 @@
         margin: 0 auto;
         width: 70%;
         height: 100vh;
-        // min-height: 823px;
+        min-height: 823px;
 
         .hero-body {
             width: 100%;
@@ -52,6 +52,7 @@
                 text-transform: uppercase;
                 font-weight: 600;
                 letter-spacing: 0.25em;
+                white-space: nowrap;
 
                 i {
                     color: red;
@@ -64,7 +65,6 @@
 
             .action-buttons {
                 margin-top: 40px;
-            
 
                 .button:nth-last-of-type(1) {
                     margin-left: 15px;
@@ -80,6 +80,18 @@
             right: 0;
             bottom: 40px;
             z-index: 1;
+
+            &:focus {
+                outline: none;
+
+                span {
+                    border-color: #5CDB95;
+
+                    &::before {
+                        background-color: $lightGreen;
+                    }
+                }
+            }
 
             &.hidden {
                 visibility: hidden;
@@ -139,9 +151,13 @@
 
 // -- Tablet Mode -- //
 @media only screen and (max-width: 992px) {
-    .hero .container .hero-body {
-        h1 {
-            font-size: 42px;
+    .hero .container {
+        min-height: 700px;
+
+        .hero-body {
+            h1 {
+                font-size: 42px;
+            }
         }
 
         h2, .typed-container, .button {
@@ -152,8 +168,12 @@
 
 // -- Mobile Mode -- //
 @media only screen and (max-width: 768px) {
-    .hero .container .hero-body {
-        margin-top: 45px;
+    .hero .container {
+        min-height: 760px;
+
+        .hero-body {
+            margin-top: 45px;
+        }
     }
 
     .letter:nth-last-child(12) {

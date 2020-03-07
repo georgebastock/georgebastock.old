@@ -18,4 +18,10 @@
         color: $creme;
         background-color: $blue;
     }
+
+    &:focus {
+        outline: none;
+        color: $creme;
+        background-color: $blue;
+    }
 }

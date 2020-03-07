@@ -2,6 +2,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html body {
@@ -54,6 +55,12 @@ html body .fp-tooltip {
 }
 
 .button:hover {
+  color: #EDF5E1;
+  background-color: #05386B;
+}
+
+.button:focus {
+  outline: none;
   color: #EDF5E1;
   background-color: #05386B;
 }
@@ -119,7 +126,7 @@ html body .fp-tooltip {
 
 .navbar .container .navbar-brand {
   text-transform: uppercase;
-  margin-top: 20px;
+  margin-top: 17px;
 }
 
 .navbar .container .navbar-brand:hover .inverted {
@@ -212,13 +219,10 @@ html body .fp-tooltip {
           transform-origin: 0 50%;
 }
 
-@media only screen and (max-width: 948px) {
+@media only screen and (max-width: 768px) {
   .navbar {
     padding: 30px 0 18px;
   }
-}
-
-@media only screen and (max-width: 768px) {
   .navbar.nav-scroll {
     padding: 15px 0 7px;
   }
@@ -253,6 +257,7 @@ html body .fp-tooltip {
   margin: 0 auto;
   width: 70%;
   height: 100vh;
+  min-height: 823px;
 }
 
 .hero .container .hero-body {
@@ -292,6 +297,7 @@ html body .fp-tooltip {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.25em;
+  white-space: nowrap;
 }
 
 .hero .container .hero-body .typed-container i {
@@ -322,6 +328,18 @@ html body .fp-tooltip {
   right: 0;
   bottom: 40px;
   z-index: 1;
+}
+
+.hero .container .scroll-indicator:focus {
+  outline: none;
+}
+
+.hero .container .scroll-indicator:focus span {
+  border-color: #5CDB95;
+}
+
+.hero .container .scroll-indicator:focus span::before {
+  background-color: #5CDB95;
 }
 
 .hero .container .scroll-indicator.hidden {
@@ -377,15 +395,21 @@ html body .fp-tooltip {
 }
 
 @media only screen and (max-width: 992px) {
+  .hero .container {
+    min-height: 700px;
+  }
   .hero .container .hero-body h1 {
     font-size: 42px;
   }
-  .hero .container .hero-body h2, .hero .container .hero-body .typed-container, .hero .container .hero-body .button {
+  .hero .container h2, .hero .container .typed-container, .hero .container .button {
     font-size: 14px;
   }
 }
 
 @media only screen and (max-width: 768px) {
+  .hero .container {
+    min-height: 760px;
+  }
   .hero .container .hero-body {
     margin-top: 45px;
   }
@@ -967,7 +991,7 @@ html body .fp-tooltip {
   position: relative;
   background-color: #EDF5E1;
   height: 85vh;
-  min-height: 735px;
+  min-height: 850px;
   background-image: url("../../img/contact-background.png");
   background-attachment: fixed;
   background-position: center;
@@ -1141,6 +1165,7 @@ html body .fp-tooltip {
 
 .contact .contact-container .contact-panel .contact-button:focus {
   outline: none;
+  color: #EDF5E1;
 }
 
 @media only screen and (max-width: 992px) {
@@ -1261,6 +1286,18 @@ html body .fp-tooltip {
   display: inline-block;
   position: relative;
   margin: 0px 10px;
+}
+
+.footer .container .footer-text .bookmark a:focus {
+  color: #EDF5E1;
+  outline: none;
+}
+
+.footer .container .footer-text .bookmark a:focus::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
 }
 
 .footer .container .footer-text .bookmark a::after {
