@@ -49,18 +49,13 @@ html body .fp-tooltip {
   font-weight: 600;
   display: inline-block;
   cursor: pointer;
-  -webkit-transition: background-color 0.5s, color 0.5s;
-  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .button:hover {
   color: #EDF5E1;
   background-color: #05386B;
-}
-
-.button.hoverAnimation {
-  -webkit-animation: pulsate 1s ease-in-out !important;
-          animation: pulsate 1s ease-in-out !important;
 }
 
 .navbar {
@@ -136,6 +131,8 @@ html body .fp-tooltip {
   padding: 10px;
   color: #5CDB95;
   margin-right: 10px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .navbar .container .navbar-menu {
@@ -157,6 +154,8 @@ html body .fp-tooltip {
   display: inline-block;
   position: relative;
   margin: 0px 10px;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
 .navbar .container .navbar-menu .navbar-item .list-number {
@@ -266,8 +265,8 @@ html body .fp-tooltip {
 }
 
 .hero .container .hero-body h1 .letter {
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
 .hero .container .hero-body h1 .letter:hover {
@@ -967,10 +966,14 @@ html body .fp-tooltip {
 
 .contact {
   position: relative;
-  overflow: hidden;
   background-color: #EDF5E1;
   height: 85vh;
   min-height: 735px;
+  background-image: url("../../img/contact-background.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .contact::after {
@@ -983,12 +986,6 @@ html body .fp-tooltip {
   top: 0;
   left: 0;
   background: rgba(5, 56, 107, 0.75);
-  pointer-events: none;
-}
-
-.contact #map {
-  height: 100%;
-  cursor: pointer !important;
 }
 
 .contact .contact-container {
@@ -1019,8 +1016,6 @@ html body .fp-tooltip {
   -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   pointer-events: all;
-  -webkit-transition: all 2s;
-  transition: all 2s;
 }
 
 .contact .contact-container .contact-panel iframe body {
@@ -1137,8 +1132,8 @@ html body .fp-tooltip {
   border: none;
   margin: 0 auto;
   display: block;
-  -webkit-transition: width 2s;
-  transition: width 2s;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
 }
 
 .contact .contact-container .contact-panel .contact-button:hover {
