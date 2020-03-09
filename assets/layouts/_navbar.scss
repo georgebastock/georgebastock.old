@@ -54,6 +54,14 @@
                 }
             }
 
+            a:focus {
+                outline: none;
+
+                .inverted {
+                    background-color: $creme;
+                }
+            }
+
             .inverted {
                 background-color: $blue;
                 padding: 10px;
@@ -87,12 +95,17 @@
                 a {
                     display: flex;
                     align-items: baseline;
+
+                    &:focus {
+                        outline: none;
+                        color: #EDF5E1;
+                    }
                 }
 
                 &::after {
                     content: '';
                     position: absolute;
-                    bottom: 15px;
+                    bottom: 16px;
                     left: 0;
                     width: 100%;
                     border-bottom: solid 4px $blue;  
@@ -139,14 +152,22 @@
 // -- Small Mobile Mode -- //
 @media only screen and (max-width: 460px) {
     .navbar {
-        font-size: 14px;
+        font-size: 18px;
 
         .container .navbar-menu .navbar-item {
-            margin: 0px 3px;
+            margin: 0px 5px;
+
+            &:after {
+                bottom: 11px;
+            }
+
+            .list-number {
+                font-size: 18px;
+            }
         }
     }
 
     .navbar.small {
-        font-size: 14px;
+        font-size: 18px;
     }
 }

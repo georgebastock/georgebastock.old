@@ -55,9 +55,14 @@
 
             h2 {
                 display: inline-block;
-                padding-bottom: 2px;
                 margin-bottom: 15px;
-                border-bottom: 4px solid rgb(5, 56, 107);
+                border-bottom: 2px solid rgb(5, 56, 107);
+
+                .list-number {
+                    color: $lightGreen;
+                    font-size: 1rem;
+                    margin-right: 4px;
+                }
             }
 
             p {
@@ -171,7 +176,7 @@
 // -- Mobile Mode -- //
 @media only screen and (max-width: 768px) {
     .contact .contact-container .contact-panel {
-        width: 80%;
+        width: 90%;
         padding: 40px 30px;
 
         .form-group textarea {

@@ -1,0 +1,155 @@
+// -----------------------------------------------------------------------------------------------
+// This file contains:
+//                      scss file with all styles connecting to the showcase section of the site.
+// -----------------------------------------------------------------------------------------------
+
+.showcase {
+    background: $lightGreen;
+    background: linear-gradient(180deg, rgba(237,245,225,1) 2%, rgba(92,219,149,1) 60%);
+    color: $blue;
+    position: relative;
+    padding: 65px 0;
+
+    .container {
+        margin: 0 auto;
+        width: 1333px;
+        position: relative;
+        // min-height: 100vh;
+
+        .showcase-body {
+            .showcase-summary {
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+                margin-bottom: 35px;
+
+                h2 {
+                    border-bottom: 2px solid $blue;
+                    margin-bottom: 15px;
+
+                    .list-number {
+                        color: $lightGreen;
+                        font-size: 1rem;
+                        margin-right: 4px;
+                    }
+                }
+        
+                h3 {
+                    font-weight: normal;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+// -- Media Queries -- //
+
+// -- Custom container width -- //
+@media only screen and (max-width: 1345px) {
+    .projects .container {
+        width: 1200px;
+
+        .projects-body {
+            margin-top: 20px;
+        }
+
+        .projects-grid .project-panel{
+            &::before {
+                height: 94%;
+            }
+        }
+    }
+}
+
+// -- Small Desktop Mode -- //
+@media only screen and (max-width: 1260px) {
+    .projects .container {
+        width: 95%;
+
+        .project-image {
+            min-height: 257px;
+        }
+
+        .projects-grid .project-panel{
+            &::before {
+                height: 92%;
+                width: 97%;
+            }
+
+            .project-details h4 {
+                width: 195px;
+            }
+
+            &:nth-last-child(-n+3) {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+// -- Tablet Mode -- //
+@media only screen and (max-width: 992px) {
+    .projects .container {
+        width: 95%;
+
+        .projects-grid .project-panel {
+            width: 34%;
+
+            &::before {
+                height: 91%;
+            }
+
+            .project-details h4 {
+                width: 150px;
+            }
+        }
+        
+        .projects-button {
+            margin-top: 20px;
+        }
+
+        .project-image {
+            min-height: unset;
+            max-height: 178px;
+        }
+    }
+}
+
+// -- Mobile Mode -- //
+@media only screen and (max-width: 768px) {
+    .projects {
+        padding-top: 103 !important; 
+
+        .container {
+            width: 85%;
+
+            .project-image {
+                min-height: unset;
+                max-height: unset;
+            }
+
+            .projects-grid .project-panel {
+                width: 48%;
+                padding-bottom: 10px;
+            }
+
+            .project-image {
+                min-height: 155px;
+                max-height: 175px;
+            }
+
+            .projects-body {
+                margin-top: 40px;
+
+                .projects-summary {
+                    margin-bottom: 25px;
+    
+                    h3 {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}

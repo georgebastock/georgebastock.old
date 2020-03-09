@@ -5,6 +5,7 @@ $(document).ready(function(){
     var delta = 5;
 
     var navbar = $("#navbar");
+    var socialhud = $("#social-hud");
     var navbarHeight = navbar.outerHeight();
 
     $(window).scroll(function(event){
@@ -35,8 +36,10 @@ $(document).ready(function(){
 
         if (scrollTop > 20) {
             navbar.addClass("nav-scroll");
+            socialhud.addClass("social-scroll");
         } else {
             navbar.removeClass("nav-scroll");
+            socialhud.removeClass("social-scroll");
         }
 
         lastScrollTop = scrollTop;

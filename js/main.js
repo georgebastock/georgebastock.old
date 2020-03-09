@@ -37,7 +37,8 @@ function loader() {
         $.getScript("/js/partials/navbar.js");
         $('#hero').load("html/hero.html");
         $.getScript("/js/partials/hero.js");
-        $('#project').load("html/project.html");
+        $('#social-hud').load("html/social-hud.html");
+        $('#showcase').load("html/showcase.html");
         $('#about').load("html/about.html");
         $('#contact').load("html/contact.html");
         $.getScript("/js/partials/contact.js");

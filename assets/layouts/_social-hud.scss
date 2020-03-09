@@ -1,0 +1,94 @@
+.social-hud {
+    position: fixed;
+    bottom: 0px;
+    left: 40px;
+    right: auto;
+    z-index: 10;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    transform-origin: bottom;
+    transform: scaleY(1);
+    transition: transform 0.25s;
+
+    &.social-scroll {
+        .social-list {
+            .outer-social {
+                padding : 5px 10px;
+
+                .side-text {
+                    top: 8px;
+                }
+            }
+
+            li:last-of-type {
+                margin-bottom: 10px;
+            }
+
+            &::after {
+                height: 40px;
+            }
+        }
+    }
+
+    .social-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+        color: $blue;
+
+        .outer-social {
+            padding: 10px;
+            position: relative;
+            font-size: 20px;
+            transition: all 0.25s;
+            cursor: pointer;
+
+            &:hover {
+                transform: translateY(-5px);
+
+                .side-text {
+                    width: 120px;
+                }
+            }
+
+            .side-text {
+                width: 0px;
+                white-space: nowrap;
+                overflow: hidden;
+                position: absolute;
+                top: 12px;
+                left: 50px;
+                text-transform: lowercase;
+                font-weight: bold;
+                font-size: 16px;
+                transition: width 0.25s;
+            }
+        }
+
+        li:last-of-type {
+            margin-bottom: 20px;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            background-color: $blue;
+            width: 2px;
+            height: 75px;
+            transition: all 0.25s;
+        }
+    }
+}
+
+// -- Media Queries -- //
+
+// -- Tablet Mode -- //
+@media only screen and (max-width: 992px) {
+    .social-hud {
+        transform: scaleY(0);
+    }
+}

@@ -20,13 +20,14 @@ $(document).ready(function(){
     // Typing Sub Title
         var options = {
             strings: [
+                "I <i class='fas fa-heart'></i> Being A Software Developer.", 
                 "I <i class='fas fa-heart'></i> Being A Front End Developer.", 
                 "I <i class='fas fa-heart'></i> Being A Web Designer.", 
+                "I <i class='fas fa-heart'></i> Being A Cat Lover.", 
                 "I <i class='fas fa-heart'></i> Being A PC Builder.", 
                 "I <i class='fas fa-heart'></i> Being A Space Nerd.", 
                 "I <i class='fas fa-heart'></i> Being A Web Warrior.", 
-                "I <i class='fas fa-heart'></i> Being A Code Learner.", 
-                "I <i class='fas fa-heart'></i> Being A Cat Lover.", 
+                "I <i class='fas fa-heart'></i> Being A Learner.", 
                 "I <i class='fas fa-heart'></i> Being A Motorbike Rider."],
             typeSpeed: 80,
             backSpeed: 50,
@@ -35,7 +36,7 @@ $(document).ready(function(){
             startDelay: 1600,
             loop: true,
             contentType: 'html',
-            smartBackspace: true
+            smartBackspace: false
         }
 
         var typed = new Typed("#typed", options);

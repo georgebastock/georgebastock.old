@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------------------------------------
+// This file contains:
+//                      scss file with all styles with the initial preload screen of the site.
+// -----------------------------------------------------------------------------------------------
+
+.pre-loader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+	top: 0;
+	z-index: 100;
+	min-height: 180px;
+    background: $lightGreen;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    transform: scaleY(1);
+    transform-origin: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .brand {
+        font-size: 26px;
+        font-weight: bold;
+        text-transform: uppercase; 
+        color: $blue;
+
+        .block {
+            display: flex;
+            align-items: center;
+
+            .set-width {
+                width: 138px;
+                margin-right: 10px;
+            }
+
+            .inverted {
+                background-color: $blue;
+                padding: 10px 0;
+                color: $lightGreen;
+                display: inline-block;
+                transition: all 0.8s;
+                width: 0px;
+                height: 53px;
+                transform-origin: left;
+                line-height: 33px;
+            }
+
+            &.loading {
+                .inverted {
+                    width: 138px;
+                    padding: 10px;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    .pre-loader-percentage {
+        text-align: center;
+        font-size: 1.5rem;
+        font-family: monospace;
+        font-weight: 300;
+        color: $blue;
+        margin-bottom: 10px;
+    }
+}
