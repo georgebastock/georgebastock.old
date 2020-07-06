@@ -17,6 +17,23 @@ $(document).ready(function(){
             heroTitleElement.textContent = possibleTextDisplay[3];
         }
 
+    // Viewheight Mobile Fix
+    $("#js-vh").height(window.innerHeight);
+
+    var delay = (function(){
+        var timer = 0;
+        return function(callback, ms){
+          clearTimeout (timer);
+          timer = setTimeout(callback, ms);
+        };
+    })();
+
+    $(window).resize(function() {
+        delay(function(){
+            $("#js-vh").height(window.innerHeight);
+        }, 500);
+    });
+
     // Typing Sub Title
         var options = {
             strings: [
