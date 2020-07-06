@@ -30,10 +30,12 @@ $(document).ready(function(){
 
     $(window).resize(function() {
         delay(function(){
-            if ($(window).scrollTop() < window.innerHeight) {
+            console.log($(window).scrollTop());
+            console.log(window.innerHeight);
+            if (window.innerHeight > 558 && ($(window).scrollTop() < window.innerHeight)) {
                 $("#js-vh").height(window.innerHeight);
             }
-        }, 500);
+        }, 200);
     });
 
     // Typing Sub Title
