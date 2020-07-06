@@ -30,7 +30,9 @@ $(document).ready(function(){
 
     $(window).resize(function() {
         delay(function(){
-            $("#js-vh").height(window.innerHeight);
+            if ($(window).scrollTop() < window.innerHeight) {
+                $("#js-vh").height(window.innerHeight);
+            }
         }, 500);
     });
 
