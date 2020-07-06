@@ -32,7 +32,7 @@ $(document).ready(function(){
         delay(function(){
             console.log($(window).scrollTop());
             console.log(window.innerHeight);
-            if (window.innerHeight > 558 && ($(window).scrollTop() < window.innerHeight)) {
+            if (window.innerHeight > 558 && $(window).scrollTop() == 0) {
                 $("#js-vh").height(window.innerHeight);
             }
         }, 200);
