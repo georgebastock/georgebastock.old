@@ -1,19 +1,19 @@
-.slide-in {
-	-webkit-animation: slide-in 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
-            animation: slide-in 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
+// .slide-in {
+// 	-webkit-animation: slide-in 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
+//             animation: slide-in 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
             
-            &:nth-of-type(2) {
-                animation-delay: 1.3s;
-            }
+//             &:nth-of-type(2) {
+//                 animation-delay: 1.3s;
+//             }
 
-            &:nth-of-type(3) {
-                animation-delay: 1.4s;
-            }
+//             &:nth-of-type(3) {
+//                 animation-delay: 1.4s;
+//             }
 
-            &:nth-of-type(4) {
-                animation-delay: 1.5s;
-            }
-}
+//             &:nth-of-type(4) {
+//                 animation-delay: 1.5s;
+//             }
+// }
 
 @keyframes slide-in {
     0% {

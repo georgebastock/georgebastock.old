@@ -15,7 +15,7 @@
         margin: 0 auto;
         width: 70%;
         height: 100vh;
-        min-height: 823px;
+        min-height: 589px;
 
         .hero-body {
             width: 100%;
@@ -152,7 +152,7 @@
 // -- Tablet Mode -- //
 @media only screen and (max-width: 992px) {
     .hero .container {
-        min-height: 700px;
+        min-height: 0px;
 
         .hero-body {
             h1 {
@@ -169,7 +169,6 @@
 // -- Mobile Mode -- //
 @media only screen and (max-width: 768px) {
     .hero .container {
-        min-height: 760px;
 
         .hero-body {
             margin-top: 45px;
