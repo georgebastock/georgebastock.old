@@ -544,8 +544,8 @@ html body .fp-tooltip {
 
 .showcase {
   background: #5CDB95;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #edf5e1), to(#5cdb95));
-  background: linear-gradient(180deg, #edf5e1 40%, #5cdb95 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#edf5e1), to(#5cdb95));
+  background: linear-gradient(180deg, #edf5e1 0%, #5cdb95 100%);
   color: #05386B;
   position: relative;
 }
