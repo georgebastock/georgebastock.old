@@ -30,8 +30,6 @@ $(document).ready(function(){
 
     $(window).resize(function() {
         delay(function(){
-            console.log($(window).scrollTop());
-            console.log(window.innerHeight);
             if (window.innerHeight > 558 && $(window).scrollTop() == 0) {
                 $("#js-vh").height(window.innerHeight);
             }

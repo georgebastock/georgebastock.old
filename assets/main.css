@@ -544,86 +544,71 @@ html body .fp-tooltip {
 
 .showcase {
   background: #5CDB95;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #edf5e1), color-stop(60%, #5cdb95));
-  background: linear-gradient(180deg, #edf5e1 2%, #5cdb95 60%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #edf5e1), to(#5cdb95));
+  background: linear-gradient(180deg, #edf5e1 40%, #5cdb95 100%);
   color: #05386B;
   position: relative;
-  padding: 50px 0;
 }
 
 .showcase .container {
   margin: 0 auto;
   width: 70%;
   position: relative;
-  min-height: 100vh;
+  padding: 50px 0;
 }
 
-.showcase .container .showcase-body .showcase-summary {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 40px;
-}
-
-.showcase .container .showcase-body .showcase-summary h2 {
-  border-bottom: 2px solid #05386B;
+.showcase .container .showcase-summary h2 {
+  display: inline-block;
   margin-bottom: 15px;
+  border-bottom: 2px solid #05386b;
 }
 
-.showcase .container .showcase-body .showcase-summary h2 .list-number {
+.showcase .container .showcase-summary h2 .list-number {
   color: #5CDB95;
   font-size: 1rem;
   margin-right: 4px;
 }
 
-.showcase .container .showcase-body .showcase-summary h3 {
-  font-weight: normal;
-  font-size: 20px;
+.showcase .container .featured-list {
+  height: 1000px;
+  width: 80%;
+  margin: 50px auto 30px;
 }
 
-.row {
-  max-width: 100%;
-  margin: 0 auto;
+.showcase .container .featured-list .featured-project {
+  margin-bottom: 30px;
+  height: 360px;
 }
 
-.row:not(:last-child) {
-  margin-bottom: 6rem;
-}
-
-.row .project {
-  overflow: hidden;
-  -webkit-box-shadow: 0 0 10px #000;
-  box-shadow: 0 0 10px #000;
-  opacity: 1;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
-  visibility: visible;
-}
-
-.row .col-1-of-2 {
+.showcase .container .featured-list .featured-project .left-container {
   float: left;
-  width: calc((100% - 6rem)/2);
+  height: 100%;
+  width: 50%;
 }
 
-.row .col-1-of-2:not(:last-child) {
-  margin-right: 6rem;
-}
-
-.row .col-1-of-2 .project__item {
-  position: relative;
-}
-
-.row .col-1-of-2 .project__item .project__img {
+.showcase .container .featured-list .featured-project .left-container .left-content {
+  background: url(../../img/first-milk-cover.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  height: 100%;
   width: 100%;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+}
+
+.showcase .container .featured-list .featured-project .right-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+
+.showcase .container .featured-list .featured-project .right-container .right-content {
+  margin-left: 40px;
 }
 
 @media only screen and (max-width: 1345px) {
@@ -722,37 +707,6 @@ html body .fp-tooltip {
   padding-top: 50px;
 }
 
-.about .container .about-bio {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 30px 0 100px 0;
-  position: relative;
-}
-
-.about .container .about-bio h2 {
-  display: inline-block;
-  padding-bottom: 2px;
-  border-bottom: 4px solid #05386B;
-  margin-bottom: 15px;
-}
-
-.about .container .about-bio p {
-  font-size: 20px;
-  width: 80%;
-}
-
-.about .container .about-bio p:first-of-type {
-  margin-bottom: 10px;
-}
-
 .about .container .about-skills {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -796,9 +750,11 @@ html body .fp-tooltip {
       -ms-flex-align: center;
           align-items: center;
   width: 70%;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .about .container .about-skills .skills .skill {
@@ -808,6 +764,8 @@ html body .fp-tooltip {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0px 20px 22px;
+  position: relative;
 }
 
 .about .container .about-skills .skills .skill i {
@@ -819,7 +777,7 @@ html body .fp-tooltip {
 .about .container .about-skills .skills .skill .skill-name {
   opacity: 0;
   position: absolute;
-  bottom: 85px;
+  bottom: -2px;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
   font-weight: bold;
@@ -835,18 +793,18 @@ html body .fp-tooltip {
 }
 
 .about .container .about-skills .skills:first-of-type {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 1260px) {
+  .about .container .about-skills .skills .skill i {
+    font-size: 86px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .about .container {
     width: 80%;
-  }
-  .about .container .about-bio {
-    margin: 30px 0 50px 0;
-  }
-  .about .container .about-bio p {
-    font-size: 16px;
   }
   .about .container .about-skills p {
     font-size: 16px;

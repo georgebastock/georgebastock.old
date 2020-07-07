@@ -5,78 +5,65 @@
 
 .showcase {
     background: $lightGreen;
-    background: linear-gradient(180deg, rgba(237,245,225,1) 2%, rgba(92,219,149,1) 60%);
+    background: linear-gradient(180deg, rgba(237,245,225,1) 40%, rgba(92,219,149,1) 100%);
     color: $blue;
     position: relative;
-    padding: 50px 0;
 
     .container {
         margin: 0 auto;
         width: 70%;
         position: relative;
-        min-height: 100vh;
+        padding: 50px 0;
 
-        .showcase-body {
-            .showcase-summary {
-                display: flex;
-                align-items: start;
-                flex-direction: column;
-                margin-bottom: 40px;
-
-                h2 {
-                    border-bottom: 2px solid $blue;
-                    margin-bottom: 15px;
-
-                    .list-number {
-                        color: $lightGreen;
-                        font-size: 1rem;
-                        margin-right: 4px;
-                    }
-                }
-        
-                h3 {
-                    font-weight: normal;
-                    font-size: 20px;
+        .showcase-summary {
+            h2 {
+                display: inline-block;
+                margin-bottom: 15px;
+                border-bottom: 2px solid rgb(5, 56, 107);
+    
+                .list-number {
+                    color: $lightGreen;
+                    font-size: 1rem;
+                    margin-right: 4px;
                 }
             }
         }
-    }
-}
 
+        .featured-list {
+            height: 1000px;
+            width: 80%;
+            margin: 50px auto 30px;
 
-.row {
-    max-width: 100%;
-    margin: 0 auto;
+            .featured-project {
+                margin-bottom: 30px;
+                height: 360px;
 
-    &:not(:last-child) {
-        margin-bottom: 6rem;
-    }
+                .left-container {
+                    float: left;
+                    height: 100%;
+                    width: 50%;
 
-    .project {
-        overflow: hidden;
-        -webkit-box-shadow: 0 0 10px #000;
-        box-shadow: 0 0 10px #000;
-        opacity: 1;
-        -webkit-transition: all .3s ease-out;
-        transition: all .3s ease-out;
-        visibility: visible;
-    }
+                    .left-content {
+                        background: url(../../img/first-milk-cover.png);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: top;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                  
+                .right-container {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    width: 50%;
+                    float: left;
 
-    .col-1-of-2 {
-        float: left;
-        width: calc((100% - 6rem)/2);
-
-        &:not(:last-child) {
-            margin-right: 6rem;
-        }
-
-        .project__item {
-            position: relative;
-
-            .project__img {
-                width: 100%;
-                -webkit-transition: all .2s;
-                transition: all .2s;
+                    .right-content {
+                        margin-left: 40px;
+                    }
+                }
             }
         }
     }
