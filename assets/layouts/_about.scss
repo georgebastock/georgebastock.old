@@ -4,115 +4,118 @@
 // -----------------------------------------------------------------------------------------------
 
 .about {
-    background-color: $creme;
-    color: $blue;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
+  background-color: $creme;
+  color: $blue;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
 
-    .container {
-        margin: 0 auto;
-        padding-top: 50px;
+  .scroll-indicator {
+    position: initial;
+  }
 
-        .about-skills {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-            padding: 0;
+  .container {
+    margin: 0 auto;
+    padding-top: 50px;
 
-            h3 {
-                font-size: 24px;
-                margin-bottom: 15px;
-            }
+    .about-skills {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
 
-            p {
-                font-size: 20px;
-                margin-bottom: 40px;
+      h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
 
-                .icon-text {
-                    transition: color 0.5s;
-                    font-weight: bold;
+      p {
+        font-size: 20px;
+        margin-bottom: 40px;
 
-                    &:hover {
-                        color: $lightGreen;
-                    }
-                }
-            }
+        .icon-text {
+          transition: color 0.5s;
+          font-weight: bold;
 
-            .skills {
-                display: flex;
-                align-items: center;
-                width: 70%;
-                justify-content: center;
-                flex-wrap: wrap;
-
-                .skill {
-                    justify-content: center;
-                    display: flex;
-                    padding: 0px 20px 22px;
-                    position: relative;
-
-                    i {
-                        font-size: 105px;  
-                        transition: color 1s;
-                    }
-
-                    .skill-name {
-                        opacity: 0;
-                        position: absolute;
-                        bottom: -2px;
-                        transition: opacity 0.5s;
-                        font-weight: bold;
-                        color: $lightGreen;
-                    }
-
-                    &:hover {
-
-                        i {
-                            color: $lightGreen;
-                        }
-
-                        .skill-name {
-                            opacity: 1;
-                        }
-                    }
-                }
-
-                &:first-of-type {
-                    margin-bottom: 30px;
-                }
-            }
+          &:hover {
+            color: $lightGreen;
+          }
         }
+      }
+
+      .skills {
+        display: flex;
+        align-items: center;
+        width: 70%;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .skill {
+          justify-content: center;
+          display: flex;
+          padding: 0px 20px 22px;
+          position: relative;
+
+          i {
+            font-size: 105px;
+            transition: color 1s;
+          }
+
+          .skill-name {
+            opacity: 0;
+            position: absolute;
+            bottom: -2px;
+            transition: opacity 0.5s;
+            font-weight: bold;
+            color: $lightGreen;
+          }
+
+          &:hover {
+            i {
+              color: $lightGreen;
+            }
+
+            .skill-name {
+              opacity: 1;
+            }
+          }
+        }
+
+        &:first-of-type {
+          margin-bottom: 30px;
+        }
+      }
     }
+  }
 }
 
 // -- Media Queries -- //
 
 // -- Small Desktop Mode -- //
 @media only screen and (max-width: 1260px) {
-    .about .container .about-skills .skills .skill i {
-        font-size: 86px;
-    }
+  .about .container .about-skills .skills .skill i {
+    font-size: 86px;
+  }
 }
 
 // -- Mobile Mode -- //
 @media only screen and (max-width: 768px) {
-    .about .container {
-        width: 80%;
+  .about .container {
+    width: 80%;
 
-        .about-skills {
-            p {
-                font-size: 16px;
-            }
+    .about-skills {
+      p {
+        font-size: 16px;
+      }
 
-            .skills {
-                width: 95%;
+      .skills {
+        width: 95%;
 
-                .skill i {
-                    font-size: 70px;
-                }
-            }
+        .skill i {
+          font-size: 70px;
         }
+      }
     }
+  }
 }

@@ -4,24 +4,84 @@
 // -----------------------------------------------------------------------------------------------
 
 .button {
-    background-color: $lightGreen;
-    border-radius: 10px;
-    text-transform: uppercase;
-    padding: 15px 25px;
-    font-size: 18px;
-    font-weight: 600;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
+  background-color: $lightGreen;
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    color: $creme;
+    background-color: $blue;
+  }
+
+  &:focus {
+    outline: none;
+    color: $creme;
+    background-color: $blue;
+  }
+}
+
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  z-index: 1;
+
+  &:focus {
+    outline: none;
+
+    span {
+      border-color: #5cdb95;
+
+      &::before {
+        background-color: $lightGreen;
+      }
+    }
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  span {
+    width: 25px;
+    height: 35px;
+    border: 2px solid $blue;
+    border-radius: 50px;
+    position: relative;
+    transition: transform 1s;
 
     &:hover {
-        color: $creme;
-        background-color: $blue;
+      border-color: $lightGreen;
+      transform: scale(0.9);
+
+      &::before {
+        background-color: $lightGreen;
+        width: 5px;
+        height: 5px;
+        margin-left: -2.5px;
+      }
     }
 
-    &:focus {
-        outline: none;
-        color: $creme;
-        background-color: $blue;
+    &::before {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      content: "";
+      width: 5px;
+      height: 5px;
+      margin-left: -2.5px;
+      background-color: $blue;
+      border-radius: 100%;
+      animation: scrollDot 3s infinite;
     }
+  }
 }

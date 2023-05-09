@@ -68,6 +68,58 @@ html body .fp-tooltip {
   background-color: #05386B;
 }
 
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  z-index: 1;
+}
+.scroll-indicator:focus {
+  outline: none;
+}
+.scroll-indicator:focus span {
+  border-color: #5cdb95;
+}
+.scroll-indicator:focus span::before {
+  background-color: #5CDB95;
+}
+.scroll-indicator.hidden {
+  visibility: hidden;
+}
+.scroll-indicator span {
+  width: 25px;
+  height: 35px;
+  border: 2px solid #05386B;
+  border-radius: 50px;
+  position: relative;
+  transition: transform 1s;
+}
+.scroll-indicator span:hover {
+  border-color: #5CDB95;
+  transform: scale(0.9);
+}
+.scroll-indicator span:hover::before {
+  background-color: #5CDB95;
+  width: 5px;
+  height: 5px;
+  margin-left: -2.5px;
+}
+.scroll-indicator span::before {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  content: "";
+  width: 5px;
+  height: 5px;
+  margin-left: -2.5px;
+  background-color: #05386B;
+  border-radius: 100%;
+  animation: scrollDot 3s infinite;
+}
+
 .navbar {
   background-color: #5CDB95;
   color: #05386B;
@@ -268,63 +320,14 @@ html body .fp-tooltip {
 .hero .container .hero-body .action-buttons .button:nth-last-of-type(1) {
   margin-left: 15px;
 }
-.hero .container .scroll-indicator {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 40px;
-  z-index: 1;
-}
-.hero .container .scroll-indicator:focus {
-  outline: none;
-}
-.hero .container .scroll-indicator:focus span {
-  border-color: #5CDB95;
-}
-.hero .container .scroll-indicator:focus span::before {
-  background-color: #5CDB95;
-}
-.hero .container .scroll-indicator.hidden {
-  visibility: hidden;
-}
-.hero .container .scroll-indicator span {
-  width: 25px;
-  height: 35px;
-  border: 2px solid #05386B;
-  border-radius: 50px;
-  position: relative;
-  transition: transform 1s;
-}
-.hero .container .scroll-indicator span:hover {
-  border-color: #5CDB95;
-  transform: scale(0.9);
-}
-.hero .container .scroll-indicator span:hover::before {
-  background-color: #5CDB95;
-  width: 5px;
-  height: 5px;
-  margin-left: -2.5px;
-}
-.hero .container .scroll-indicator span::before {
-  position: absolute;
-  top: 5px;
-  left: 50%;
-  content: "";
-  width: 5px;
-  height: 5px;
-  margin-left: -2.5px;
-  background-color: #05386B;
-  border-radius: 100%;
-  animation: scrollDot 3s infinite;
-}
 
 @media only screen and (max-width: 1260px) {
   .hero .container .hero-body h1 {
     font-size: 56px;
   }
-  .hero .container .hero-body h2, .hero .container .hero-body .typed-container, .hero .container .hero-body .button {
+  .hero .container .hero-body h2,
+  .hero .container .hero-body .typed-container,
+  .hero .container .hero-body .button {
     font-size: 16px;
   }
 }
@@ -335,7 +338,9 @@ html body .fp-tooltip {
   .hero .container .hero-body h1 {
     font-size: 42px;
   }
-  .hero .container h2, .hero .container .typed-container, .hero .container .button {
+  .hero .container h2,
+  .hero .container .typed-container,
+  .hero .container .button {
     font-size: 14px;
   }
 }
@@ -351,7 +356,9 @@ html body .fp-tooltip {
   .hero .container .hero-body h1 {
     font-size: 28px;
   }
-  .hero .container .hero-body h2, .hero .container .hero-body .typed-container, .hero .container .hero-body .button {
+  .hero .container .hero-body h2,
+  .hero .container .hero-body .typed-container,
+  .hero .container .hero-body .button {
     font-size: 10px;
   }
   .hero .container .hero-body .line-break {
@@ -520,6 +527,9 @@ html body .fp-tooltip {
   position: relative;
   z-index: 0;
   overflow: hidden;
+}
+.about .scroll-indicator {
+  position: initial;
 }
 .about .container {
   margin: 0 auto;
